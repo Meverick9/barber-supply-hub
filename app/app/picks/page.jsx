@@ -11,25 +11,9 @@ export default function PicksPage() {
       note: "Best all-round clipper for fades",
       badge: "Top Pick",
     },
-    {
-      name: "Wahl Lithium Cordless Clipper",
-      img: "https://m.media-amazon.com/images/I/61eKxKxg1zL._AC_SL1500_.jpg",
-      fallbackImg: "/picks/magic-clip.jpg",
-      url: "https://www.amazon.com/dp/B09XLX656Z?tag=barbersupp044-20",
-      note: "Lightweight & quiet",
-      badge: "Quiet",
-    },
-    {
-      name: "BaBylissPRO GoldFX Boost+",
-      img: "https://m.media-amazon.com/images/I/71s6Y2F9NXL._AC_SL1500_.jpg",
-      fallbackImg: "/picks/magic-clip.jpg",
-      url: "https://www.amazon.com/dp/B09TCN6BHL?tag=barbersupp044-20",
-      note: "High-torque motor, premium build",
-      badge: "Premium",
-    },
-  ];
 
-  const Img = ({ src, fallback, alt }) => (
+  ];
+const Img = ({ src, fallback, alt }) => (
     <img
       src={src}
       alt={alt}
