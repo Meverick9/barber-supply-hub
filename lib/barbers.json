@@ -1,0 +1,14 @@
+[
+  {
+    "id": "marco-rossi",
+    "name": "Marco Rossi",
+    "experience": "6 years",
+    "country": "Italy",
+    "specialty": "Skin fades",
+    "bio": "Working in high-volume shops, specializing in precision fades.",
+    "favoriteTools": [
+      "wahl-magic-clip",
+      "wahl-detailer"
+    ]
+  }
+]

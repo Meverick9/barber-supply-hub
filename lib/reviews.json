@@ -1,0 +1,20 @@
+[
+  {
+    "id": "r1",
+    "productId": "wahl-magic-clip",
+    "name": "Marco",
+    "role": "Barber",
+    "rating": 5,
+    "text": "Best fade clipper I've used in 6 years. Low fatigue and consistent cuts.",
+    "date": "2026-01-02"
+  },
+  {
+    "id": "r2",
+    "productId": "wahl-detailer",
+    "name": "Anna",
+    "role": "Shop Owner",
+    "rating": 5,
+    "text": "Solid for lineups; holds up in a busy shop if you maintain blades.",
+    "date": "2026-01-10"
+  }
+]

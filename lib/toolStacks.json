@@ -1,0 +1,18 @@
+[
+  {
+    "barberId": "marco-rossi",
+    "updated": "2026-01-05",
+    "stack": [
+      {
+        "productId": "wahl-magic-clip",
+        "role": "Main Clipper",
+        "why": "Fast fades in high-volume shop"
+      },
+      {
+        "productId": "wahl-detailer",
+        "role": "Detail Trimmer",
+        "why": "Crisp lineups and detailing"
+      }
+    ]
+  }
+]
