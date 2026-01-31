@@ -1,0 +1,158 @@
+{
+  "best-clippers": {
+    "title": "Best Barber Clippers (2026)",
+    "intro": "Top picks for fades, reliability, and barbershop workload.",
+    "products": [
+      {
+        "id": "wahl-magic-clip",
+        "name": "Wahl Magic Clip",
+        "short": "Best all-round fade clipper: forgiving, reliable, easy maintenance.",
+        "priceText": "Mid-range",
+        "amazonUrl": "https://www.amazon.com/your-affiliate-link",
+        "priceDropPercent": 12,
+        "stockLeft": 8,
+        "bestFor": [
+          "Fades",
+          "All-round"
+        ],
+        "skillLevel": "All",
+        "workload": "High-volume",
+        "score": {
+          "power": 9,
+          "ergonomics": 9,
+          "durability": 8,
+          "value": 9
+        }
+      },
+      {
+        "id": "babyliss-goldfx",
+        "name": "BaBylissPRO GoldFX",
+        "short": "Premium power tool: strong torque for busy shops.",
+        "priceText": "Premium",
+        "amazonUrl": "https://www.amazon.com/your-affiliate-link",
+        "priceDropPercent": 8,
+        "stockLeft": 5,
+        "bestFor": [
+          "All-round"
+        ],
+        "skillLevel": "All",
+        "workload": "High-volume",
+        "score": {
+          "power": 10,
+          "ergonomics": 8,
+          "durability": 9,
+          "value": 7
+        }
+      }
+    ],
+    "faq": [
+      {
+        "q": "Cordless or corded?",
+        "a": "Cordless for comfort; corded for \u201cnever dies\u201d shop stations."
+      },
+      {
+        "q": "How is Best Value chosen?",
+        "a": "Transparent weighted score (power, ergonomics, durability, value)."
+      }
+    ]
+  },
+  "best-trimmers": {
+    "title": "Best Barber Trimmers (2026)",
+    "intro": "Best trimmers for lineups, edging, and detailing.",
+    "products": [
+      {
+        "id": "wahl-detailer",
+        "name": "Wahl Detailer (Cordless)",
+        "short": "Sharp lines, consistent performance \u2014 great for edging.",
+        "priceText": "Mid-range",
+        "amazonUrl": "https://www.amazon.com/your-affiliate-link",
+        "stockLeft": 6,
+        "bestFor": [
+          "Beards",
+          "All-round"
+        ],
+        "skillLevel": "All",
+        "workload": "Barbershop",
+        "score": {
+          "power": 8,
+          "ergonomics": 9,
+          "durability": 8,
+          "value": 9
+        }
+      },
+      {
+        "id": "andis-t-outliner",
+        "name": "Andis T-Outliner",
+        "short": "Classic for lineups. Corded reliability for shop stations.",
+        "priceText": "Value",
+        "amazonUrl": "https://www.amazon.com/your-affiliate-link",
+        "bestFor": [
+          "All-round"
+        ],
+        "skillLevel": "All",
+        "workload": "Barbershop",
+        "score": {
+          "power": 8,
+          "ergonomics": 8,
+          "durability": 9,
+          "value": 8
+        }
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is a trimmer necessary for beginners?",
+        "a": "Yes, for clean edges and detailing. But clipper comes first."
+      }
+    ]
+  },
+  "starter-kit": {
+    "title": "Best Barber Starter Kit (2026)",
+    "intro": "The first tools beginners actually need \u2014 no overspending.",
+    "products": [
+      {
+        "id": "wahl-magic-clip",
+        "name": "Wahl Magic Clip",
+        "short": "Best beginner clipper: forgiving and fade-friendly.",
+        "priceText": "Mid-range",
+        "amazonUrl": "https://www.amazon.com/your-affiliate-link",
+        "stockLeft": 10,
+        "bestFor": [
+          "Beginner",
+          "All-round"
+        ],
+        "skillLevel": "All",
+        "workload": "Home",
+        "score": {
+          "power": 8,
+          "ergonomics": 9,
+          "durability": 8,
+          "value": 10
+        }
+      },
+      {
+        "id": "wahl-detailer",
+        "name": "Wahl Detailer (Cordless)",
+        "short": "Sharp lines and edging \u2014 perfect starter trimmer.",
+        "priceText": "Mid-range",
+        "amazonUrl": "https://www.amazon.com/your-affiliate-link",
+        "score": {
+          "power": 8,
+          "ergonomics": 9,
+          "durability": 8,
+          "value": 9
+        }
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do beginners need premium tools?",
+        "a": "No. Reliability and blades matter more than prestige."
+      },
+      {
+        "q": "Clipper vs trimmer first?",
+        "a": "Clipper. It\u2019s your main workhorse."
+      }
+    ]
+  }
+}
