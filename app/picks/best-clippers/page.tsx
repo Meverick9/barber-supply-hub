@@ -9,7 +9,14 @@ const products = [
     rating: 4.8,
     reviews: 22739,
     amazonLink: "https://www.amazon.com/dp/B00UK8WFQO?tag=barbersupp044-20",
-    description: "Professional cordless clipper with crunch blade technology",
+    image: "https://m.media-amazon.com/images/I/71Q2h7Y3sKL._AC_SL1500_.jpg",
+    shortDesc: "Professional cordless clipper with crunch blade technology",
+    fullDesc: "The Wahl 5-Star Magic Clip is a versatile cordless clipper built for high-volume barbershops. Its crunch blade technology delivers smooth, snag-free cuts on all hair textures, while the lithium-ion battery provides 90+ minutes of fade-ready runtime. At 4.8/5 stars from 22,739 reviews, barbers praise its balance of power and maneuverability. The adjustable taper lever allows seamless blending without guard changes.",
+    motor: "Electromagnetic",
+    blade: "Crunch Blade",
+    power: "Cordless (90min)",
+    weight: "8 oz",
+    bestFor: "Barbers who need cordless freedom without sacrificing cutting power",
     badge: "Bestseller",
   },
   {
@@ -20,7 +27,14 @@ const products = [
     rating: 4.9,
     reviews: 15234,
     amazonLink: "https://www.amazon.com/dp/B0BJL7W4HP?tag=barbersupp044-20",
-    description: "Premium adjustable blade clipper with lithium-ion battery",
+    image: "https://m.media-amazon.com/images/I/81XXXXXXXXL._AC_SL1500_.jpg",
+    shortDesc: "Premium adjustable blade clipper with lithium-ion battery",
+    fullDesc: "The Andis Master Cordless combines premium build quality with a lithium-ion battery that delivers 80 minutes of consistent cutting power. Its magnetic motor runs cooler and quieter than rotary alternatives, making it ideal for all-day use. The adjustable blade (000-1) with carbon steel construction maintains sharpness through thousands of cuts. With 4.9/5 stars from 15,234 reviews, it's the top choice for barbers who demand both performance and portability.",
+    motor: "Magnetic",
+    blade: "Carbon Steel",
+    power: "Cordless (80min)",
+    weight: "1 lb",
+    bestFor: "Professional barbers prioritizing comfort and cordless reliability",
     badge: "Pro Choice",
   },
   {
@@ -31,7 +45,14 @@ const products = [
     rating: 4.7,
     reviews: 8934,
     amazonLink: "https://www.amazon.com/dp/B09TCN6BHL?tag=barbersupp044-20",
-    description: "High-torque brushless motor with gold titanium blade",
+    image: "https://m.media-amazon.com/images/I/91XXXXXXXXL._AC_SL1500_.jpg",
+    shortDesc: "High-torque brushless motor with gold titanium blade",
+    fullDesc: "The BaBylissPRO GoldFX features a Ferrari-designed brushless motor that delivers unmatched torque for thick, coarse hair. The gold titanium blade runs cool even during marathon fade sessions and holds zero-gap adjustments without drifting. At $199.99, it's premium-priced, but barbers report 3+ years of daily use without motor fade. The 9.5 oz weight provides stability for precision work.",
+    motor: "Brushless",
+    blade: "Gold Titanium",
+    power: "Corded",
+    weight: "9.5 oz",
+    bestFor: "Barbers doing 10+ fades per day",
     badge: "Premium",
   },
   {
@@ -42,7 +63,15 @@ const products = [
     rating: 4.8,
     reviews: 18765,
     amazonLink: "https://www.amazon.com/dp/B000VVT94G?tag=barbersupp044-20",
-    description: "Powerful V9000 motor for precision cutting",
+    image: "https://m.media-amazon.com/images/I/71XXXXXXXXL._AC_SL1500_.jpg",
+    shortDesc: "Powerful V9000 motor for precision cutting",
+    fullDesc: "The Wahl Senior features the legendary V9000 motor that runs faster and cooler than standard clippers. This corded powerhouse is the go-to for barbers who need consistent power without battery anxiety. The adjustable blade lever and included premium guards make it versatile for all cut types. With 4.8/5 stars from 18,765 reviews, it's a proven workhorse in busy shops.",
+    motor: "V9000",
+    blade: "Adjustable",
+    power: "Corded",
+    weight: "10 oz",
+    bestFor: "High-volume shops needing reliable corded power",
+    badge: "",
   },
   {
     id: "oster-76",
@@ -52,81 +81,31 @@ const products = [
     rating: 4.6,
     reviews: 9876,
     amazonLink: "https://www.amazon.com/dp/B0009XH5OG?tag=barbersupp044-20",
-    description: "Heavy-duty detachable blade clipper",
-  },
-  {
-    id: "wahl-elite",
-    name: "Wahl Elite Pro",
-    price: 59.99,
-    currency: "$",
-    rating: 4.5,
-    reviews: 12543,
-    amazonLink: "https://www.amazon.com/dp/B01MRXK4YH?tag=barbersupp044-20",
-    description: "High-performance corded clipper for home and professional use",
+    image: "https://m.media-amazon.com/images/I/71XXXXXXXXL._AC_SL1500_.jpg",
+    shortDesc: "Heavy-duty detachable blade clipper",
+    fullDesc: "The Oster Classic 76 is the industry standard for detachable blade clippers. Its universal motor delivers brute force power that cuts through any hair type with ease. The detachable blade system allows quick switching between sizes, making it ideal for bulk removal and precision work. Built like a tank, many barbers use the same 76 for 10+ years. With 4.6/5 stars from 9,876 reviews, it's the definition of reliability.",
+    motor: "Universal",
+    blade: "Detachable",
+    power: "Corded",
+    weight: "1.2 lb",
+    bestFor: "Barbers wanting versatility with detachable blades",
+    badge: "",
   },
 ];
 
-export default function BestClippersPage() {
-  return (
-    <main style={{ background: "#0a0a0a", color: "white", minHeight: "100vh", fontFamily: "sans-serif" }}>
-      {/* Hero */}
-      <div style={{ background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)", padding: "80px 20px", textAlign: "center", borderBottom: "1px solid #333" }}>
-        <h1 style={{ fontSize: "48px", fontWeight: "800", marginBottom: "16px" }}>Professional Hair Clippers</h1>
-        <p style={{ fontSize: "20px", opacity: 0.8, maxWidth: "600px", margin: "0 auto 30px" }}>
-          Compare top-rated clippers. Read reviews from 120k+ barbers.
-        </p>
-        <div style={{ display: "flex", justifyContent: "center", gap: "30px", flexWrap: "wrap", opacity: 0.7, fontSize: "14px" }}>
-          <span>✓ 120k+ Reviews</span>
-          <span>✓ Expert Picks</span>
-          <span>✓ Best Prices</span>
-        </div>
-      </div>
-
-      {/* Products */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "40px 20px" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          {products.map((product) => (
-            <div key={product.id} style={{ background: "#1a1a1a", borderRadius: "16px", overflow: "hidden", border: "1px solid #333", display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-              {/* Image */}
-              <div style={{ position: "relative", width: "100%", maxWidth: "400px", height: "300px", background: "#2a2a2a", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "80px" }}>
-                ✂️
-                {product.badge && (
-                  <div style={{ position: "absolute", top: "15px", left: "15px", background: "#facc15", color: "black", padding: "6px 12px", borderRadius: "4px", fontSize: "12px", fontWeight: "700" }}>
-                    {product.badge}
-                  </div>
-                )}
-                <div style={{ position: "absolute", bottom: "15px", left: "15px", background: "rgba(0,0,0,0.8)", padding: "8px 12px", borderRadius: "8px", display: "flex", alignItems: "center", gap: "5px" }}>
-                  <span style={{ color: "#facc15", fontSize: "18px" }}>★</span>
-                  <span style={{ fontWeight: "700" }}>{product.rating}</span>
-                  <span style={{ opacity: 0.7, fontSize: "14px" }}>({product.reviews.toLocaleString()})</span>
-                </div>
-              </div>
-
-              {/* Info */}
-              <div style={{ flex: "1", padding: "25px", minWidth: "300px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <div>
-                  <h3 style={{ fontSize: "24px", marginBottom: "8px", fontWeight: "700" }}>{product.name}</h3>
-                  <p style={{ opacity: 0.7, fontSize: "16px", marginBottom: "15px" }}>{product.description}</p>
-                  <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "15px" }}>
-                    <span style={{ background: "#0a0a0a", padding: "6px 12px", borderRadius: "4px", fontSize: "13px" }}>✓ Cordless</span>
-                    <span style={{ background: "#0a0a0a", padding: "6px 12px", borderRadius: "4px", fontSize: "13px" }}>✓ Professional</span>
-                  </div>
-                </div>
-
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "15px", paddingTop: "20px", borderTop: "1px solid #333" }}>
-                  <div>
-                    <p style={{ opacity: 0.6, fontSize: "14px", marginBottom: "4px" }}>Price on Amazon</p>
-                    <p style={{ color: "#facc15", fontSize: "32px", fontWeight: "800" }}>{product.currency}{product.price.toFixed(2)}</p>
-                  </div>
-                  <a href={product.amazonLink} target="_blank" rel="noopener noreferrer" style={{ background: "#facc15", color: "black", padding: "16px 32px", borderRadius: "8px", textDecoration: "none", fontWeight: "700", fontSize: "16px" }}>
-                    Check Price →
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </main>
-  );
-}
+const faqs = [
+  {
+    question: "What's the best clipper for fades?",
+    answer: "The BaByliss GoldFX ($199.99) and Wahl Magic Clip ($89.99) are top choices for fades. BaByliss offers more power for thick hair, while Wahl provides better value and cordless freedom."
+  },
+  {
+    question: "Should I buy a corded or cordless clipper?",
+    answer: "Corded (BaByliss GoldFX, Oster Classic 76) = unlimited runtime, more power. Cordless (Wahl Magic Clip, Andis Master) = freedom of movement, but limited battery. Professional barbers often own both."
+  },
+  {
+    question: "How long do clipper blades last?",
+    answer: "With proper maintenance (oiling, cleaning), blades last 6-12 months. Replace when you notice pulling, snagging, or uneven cuts."
+  },
+  {
+    question: "Can I use hair clippers for beard trimming?",
+    answer: "Hair clippers work for beards, but dedicated
