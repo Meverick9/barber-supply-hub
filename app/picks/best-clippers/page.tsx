@@ -1,111 +1,111 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import ProductCard from "@/app/components/ProductCard";
+
+export const metadata: Metadata = {
+  title: "Best Professional Hair Clippers 2025",
+  description:
+    "Compare the best professional hair clippers for barbers. Side-by-side specs, expert reviews, and real-world performance analysis.",
+  alternates: {
+    canonical: "https://barbersupplyhub.com/picks/best-clippers",
+  },
+};
 
 const products = [
   {
     id: "wahl-magic-clip",
     name: "Wahl 5-Star Cordless Magic Clip",
     price: 89.99,
-    currency: "$",
-    rating: 4.8,
-    reviews: 22739,
-    amazonLink: "https://www.amazon.com/dp/B00UK8WFQO?tag=barbersupp044-20",
-    image: "https://m.media-amazon.com/images/I/71Q2h7Y3sKL._AC_SL1500_.jpg",
-    shortDesc: "Professional cordless clipper with crunch blade technology",
-    fullDesc: "The Wahl 5-Star Magic Clip is a versatile cordless clipper built for high-volume barbershops. Its crunch blade technology delivers smooth, snag-free cuts on all hair textures, while the lithium-ion battery provides 90+ minutes of fade-ready runtime. At 4.8/5 stars from 22,739 reviews, barbers praise its balance of power and maneuverability. The adjustable taper lever allows seamless blending without guard changes.",
-    motor: "Electromagnetic",
-    blade: "Crunch Blade",
-    power: "Cordless (90min)",
-    weight: "8 oz",
-    bestFor: "Barbers who need cordless freedom without sacrificing cutting power",
-    badge: "Bestseller",
+    rating: 4.7,
+    image: "/images/wahl-magic-clip.jpg",
+    description: "Professional cordless clipper with 90+ minute runtime and precision fade blade",
+    brand: "Wahl",
+    affiliateUrl: "https://amazon.com/dp/B0XXXXX?tag=yourtag"
   },
   {
     id: "andis-master",
-    name: "Andis Master Cordless",
-    price: 149.99,
-    currency: "$",
-    rating: 4.9,
-    reviews: 15234,
-    amazonLink: "https://www.amazon.com/dp/B0BJL7W4HP?tag=barbersupp044-20",
-    image: "https://m.media-amazon.com/images/I/81XXXXXXXXL._AC_SL1500_.jpg",
-    shortDesc: "Premium adjustable blade clipper with lithium-ion battery",
-    fullDesc: "The Andis Master Cordless combines premium build quality with a lithium-ion battery that delivers 80 minutes of consistent cutting power. Its magnetic motor runs cooler and quieter than rotary alternatives, making it ideal for all-day use. The adjustable blade (000-1) with carbon steel construction maintains sharpness through thousands of cuts. With 4.9/5 stars from 15,234 reviews, it's the top choice for barbers who demand both performance and portability.",
-    motor: "Magnetic",
-    blade: "Carbon Steel",
-    power: "Cordless (80min)",
-    weight: "1 lb",
-    bestFor: "Professional barbers prioritizing comfort and cordless reliability",
-    badge: "Pro Choice",
+    name: "Andis Master Adjustable Blade Clipper",
+    price: 119.99,
+    rating: 4.8,
+    image: "/images/andis-master.jpg",
+    description: "Powerful magnetic motor clipper with carbon-steel blade for all hair types",
+    brand: "Andis",
+    affiliateUrl: "https://amazon.com/dp/B0YYYYY?tag=yourtag"
   },
   {
     id: "babyliss-goldfx",
     name: "BaBylissPRO GoldFX",
     price: 199.99,
-    currency: "$",
     rating: 4.7,
-    reviews: 8934,
-    amazonLink: "https://www.amazon.com/dp/B09TCN6BHL?tag=barbersupp044-20",
-    image: "https://m.media-amazon.com/images/I/91XXXXXXXXL._AC_SL1500_.jpg",
-    shortDesc: "High-torque brushless motor with gold titanium blade",
-    fullDesc: "The BaBylissPRO GoldFX features a Ferrari-designed brushless motor that delivers unmatched torque for thick, coarse hair. The gold titanium blade runs cool even during marathon fade sessions and holds zero-gap adjustments without drifting. At $199.99, it's premium-priced, but barbers report 3+ years of daily use without motor fade. The 9.5 oz weight provides stability for precision work.",
-    motor: "Brushless",
-    blade: "Gold Titanium",
-    power: "Corded",
-    weight: "9.5 oz",
-    bestFor: "Barbers doing 10+ fades per day",
-    badge: "Premium",
+    image: "/images/babyliss-goldfx.jpg",
+    description: "Premium brushless motor clipper with gold titanium blades",
+    brand: "BaBylissPRO",
+    affiliateUrl: "https://amazon.com/dp/B0ZZZZZ?tag=yourtag"
+  },
+  {
+    id: "oster-fast-feed",
+    name: "Oster Fast Feed Adjustable Clipper",
+    price: 79.99,
+    rating: 4.6,
+    image: "/images/oster-fast-feed.jpg",
+    description: "Fast cutting clipper with adjustable blade for professional barbers",
+    brand: "Oster",
+    affiliateUrl: "https://amazon.com/dp/B0AAAAA?tag=yourtag"
   },
   {
     id: "wahl-senior",
-    name: "Wahl Professional 5-Star Senior",
+    name: "Wahl 5-Star Senior",
     price: 109.99,
-    currency: "$",
     rating: 4.8,
-    reviews: 18765,
-    amazonLink: "https://www.amazon.com/dp/B000VVT94G?tag=barbersupp044-20",
-    image: "https://m.media-amazon.com/images/I/71XXXXXXXXL._AC_SL1500_.jpg",
-    shortDesc: "Powerful V9000 motor for precision cutting",
-    fullDesc: "The Wahl Senior features the legendary V9000 motor that runs faster and cooler than standard clippers. This corded powerhouse is the go-to for barbers who need consistent power without battery anxiety. The adjustable blade lever and included premium guards make it versatile for all cut types. With 4.8/5 stars from 18,765 reviews, it's a proven workhorse in busy shops.",
-    motor: "V9000",
-    blade: "Adjustable",
-    power: "Corded",
-    weight: "10 oz",
-    bestFor: "High-volume shops needing reliable corded power",
-    badge: "",
-  },
-  {
-    id: "oster-76",
-    name: "Oster Classic 76",
-    price: 129.99,
-    currency: "$",
-    rating: 4.6,
-    reviews: 9876,
-    amazonLink: "https://www.amazon.com/dp/B0009XH5OG?tag=barbersupp044-20",
-    image: "https://m.media-amazon.com/images/I/71XXXXXXXXL._AC_SL1500_.jpg",
-    shortDesc: "Heavy-duty detachable blade clipper",
-    fullDesc: "The Oster Classic 76 is the industry standard for detachable blade clippers. Its universal motor delivers brute force power that cuts through any hair type with ease. The detachable blade system allows quick switching between sizes, making it ideal for bulk removal and precision work. Built like a tank, many barbers use the same 76 for 10+ years. With 4.6/5 stars from 9,876 reviews, it's the definition of reliability.",
-    motor: "Universal",
-    blade: "Detachable",
-    power: "Corded",
-    weight: "1.2 lb",
-    bestFor: "Barbers wanting versatility with detachable blades",
-    badge: "",
-  },
+    image: "/images/wahl-senior.jpg",
+    description: "Heavy-duty corded clipper with V9000 electromagnetic motor",
+    brand: "Wahl",
+    affiliateUrl: "https://amazon.com/dp/B0BBBBB?tag=yourtag"
+  }
 ];
 
-const faqs = [
-  {
-    question: "What's the best clipper for fades?",
-    answer: "The BaByliss GoldFX ($199.99) and Wahl Magic Clip ($89.99) are top choices for fades. BaByliss offers more power for thick hair, while Wahl provides better value and cordless freedom."
-  },
-  {
-    question: "Should I buy a corded or cordless clipper?",
-    answer: "Corded (BaByliss GoldFX, Oster Classic 76) = unlimited runtime, more power. Cordless (Wahl Magic Clip, Andis Master) = freedom of movement, but limited battery. Professional barbers often own both."
-  },
-  {
-    question: "How long do clipper blades last?",
-    answer: "With proper maintenance (oiling, cleaning), blades last 6-12 months. Replace when you notice pulling, snagging, or uneven cuts."
-  },
-  {
-    question: "Can I use hair clippers for beard trimming?",
-    answer: "Hair clippers work for beards, but dedicated
+export default function BestClippersPage() {
+  return (
+    <main className="bg-black text-white">
+
+      {/* HERO */}
+      <section className="text-center py-24 px-6">
+        <h1 className="text-5xl font-bold mb-6">
+          Best Professional Hair Clippers 2025
+        </h1>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          Expert-tested professional clippers for barbers. Compare specs, performance, and find the perfect clipper for your shop.
+        </p>
+      </section>
+
+      {/* PRODUCTS */}
+      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
+        {products.map((product) => (
+          <div key={product.id}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div className="bg-gray-900 rounded-lg p-6">
+            <h3 className="text-xl font-semibold mb-3">What makes a professional clipper different?</h3>
+            <p className="text-gray-400">Professional clippers feature more powerful motors, durable metal bodies, sharper blades that stay sharp longer, and are designed for continuous daily use.</p>
+          </div>
+          <div className="bg-gray-900 rounded-lg p-6">
+            <h3 className="text-xl font-semibold mb-3">Should I buy cordless or corded clippers?</h3>
+            <p className="text-gray-400">Cordless offers mobility and convenience. Corded provides consistent power. Many professionals keep both for different situations.</p>
+          </div>
+          <div className="bg-gray-900 rounded-lg p-6">
+            <h3 className="text-xl font-semibold mb-3">How often should I replace clipper blades?</h3>
+            <p className="text-gray-400">Professional barbers typically replace blades every 3-6 months depending on usage. Signs include pulling hair, uneven cuts, or requiring multiple passes.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}

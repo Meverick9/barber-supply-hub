@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Clipper Comparison | Side-by-Side Specs",
+  description:
+    "Compare professional barber clippers side by side. See ratings, motor types, blade quality, battery life, and prices.",
+  alternates: {
+    canonical: "https://barbersupplyhub.com/compare",
+  },
+};
 import Link from "next/link";
 
 const kits = [

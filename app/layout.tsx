@@ -1,10 +1,63 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import Link from "next/link";
+import "./globals.css";
+import Header from "./components/Header";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  title: "Barber Supply Hub",
-  description: "Best barber tools and equipment",
+  metadataBase: new URL("https://barbersupplyhub.com"),
+
+  title: {
+    default: "Barber Supply Hub | Best Professional Barber Tools 2025",
+    template: "%s | Barber Supply Hub",
+  },
+
+  description:
+    "Compare the best professional barber clippers, trimmers, and starter kits. Trusted by 120k+ barbers worldwide. Reviews, specs, and side-by-side comparisons.",
+
+  keywords: [
+    "best barber clippers",
+    "professional hair clippers",
+    "best hair trimmers",
+    "barber tools 2025",
+    "clipper comparison",
+  ],
+
+  openGraph: {
+    title: "Best Professional Barber Tools 2025",
+    description:
+      "Compare top-rated barber clippers and trimmers. Expert reviews and side-by-side specs.",
+    url: "https://barbersupplyhub.com",
+    siteName: "Barber Supply Hub",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg", // добавь файл позже в public
+        width: 1200,
+        height: 630,
+        alt: "Barber Supply Hub",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Professional Barber Tools 2025",
+    description:
+      "Compare top-rated barber clippers and trimmers with expert reviews.",
+    images: ["/og-image.jpg"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -12,60 +65,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const gaId = "G-YVYZFGSHX2";
-
   return (
     <html lang="en">
-      <head>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gaId}');
-          `}
-        </Script>
-      </head>
-      <body style={{ margin: 0, padding: 0, background: "#0a0a0a" }}>
-        {/* Header */}
-        <header style={{ background: "#0a0a0a", borderBottom: "1px solid #333", padding: "20px 40px" }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "20px" }}>
-            <Link href="/" style={{ color: "#facc15", fontSize: "24px", fontWeight: "700", textDecoration: "none" }}>
-              Barber Supply Hub
-            </Link>
-
-            <nav style={{ display: "flex", gap: "25px", flexWrap: "wrap", alignItems: "center" }}>
-              <Link href="/picks/best-clippers" style={{ color: "white", textDecoration: "none", opacity: 0.8, fontSize: "14px" }}>
-                Clippers
-              </Link>
-              <Link href="/picks/best-trimmers" style={{ color: "white", textDecoration: "none", opacity: 0.8, fontSize: "14px" }}>
-                Trimmers
-              </Link>
-              <Link href="/picks/starter-kit" style={{ color: "white", textDecoration: "none", opacity: 0.8, fontSize: "14px" }}>
-                Starter Kit
-              </Link>
-              <Link href="/compare" style={{ color: "#facc15", textDecoration: "none", fontSize: "14px", fontWeight: "600" }}>
-                Compare
-              </Link>
-              <Link href="/barbers" style={{ color: "white", textDecoration: "none", opacity: 0.8, fontSize: "14px" }}>
-                Barbers
-              </Link>
-            </nav>
-          </div>
-        </header>
-
+      <body>
+        <GoogleAnalytics />
+        <Header />
         {children}
-
-        {/* Footer */}
-        <footer style={{ background: "#0a0a0a", borderTop: "1px solid #333", padding: "40px 20px", textAlign: "center" }}>
-          <p style={{ opacity: 0.5, fontSize: "14px" }}>
-            © 2025 Barber Supply Hub. As an Amazon Associate we earn from qualifying purchases.
-          </p>
-        </footer>
       </body>
     </html>
   );

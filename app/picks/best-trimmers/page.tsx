@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Professional Hair Trimmers 2025",
+  description:
+    "Discover the best barber trimmers for lining, edging, and precision work. Compare top-rated professional models.",
+  alternates: {
+    canonical: "https://barbersupplyhub.com/picks/best-trimmers",
+  },
+};
 import Link from "next/link";
 
 const products = [
