@@ -1,0 +1,139 @@
+{
+  "best-clippers": {
+    "title": "Best Hair Clippers for Barbers (2026)",
+    "description": "Top-rated professional barber clippers compared by power, blade quality, durability, battery life, and value.",
+    "image": "/og-clippers.jpg",
+    "category": "clippers",
+    "keywords": ["best barber clippers", "professional hair clippers", "wahl vs andis", "barber tools"],
+    "products": [
+      {
+        "id": "wahl-magic-clip",
+        "name": "Wahl 5-Star Cordless Magic Clip",
+        "price": 89.99,
+        "currency": "$",
+        "rating": 4.8,
+        "reviews": 22739,
+        "amazonUrl": "https://www.amazon.com/dp/B00UK8WFQO?tag=barbersupp044-20",
+        "image": "https://m.media-amazon.com/images/I/71Q2h7Y3sKL._AC_SL1500_.jpg",
+        "shortDesc": "Professional cordless clipper with crunch blade technology",
+        "motor": "Electromagnetic",
+        "blade": "Crunch Blade",
+        "power": "Cordless (90min)",
+        "weight": "8 oz",
+        "bestFor": "Barbers who need cordless freedom without sacrificing cutting power",
+        "badge": "Bestseller"
+      },
+      {
+        "id": "andis-master",
+        "name": "Andis Master Cordless",
+        "price": 149.99,
+        "currency": "$",
+        "rating": 4.9,
+        "reviews": 15234,
+        "amazonUrl": "https://www.amazon.com/dp/B0BJL7W4HP?tag=barbersupp044-20",
+        "image": "https://m.media-amazon.com/images/I/81XXXXXXXXL._AC_SL1500_.jpg",
+        "shortDesc": "Premium adjustable blade clipper with lithium-ion battery",
+        "motor": "Magnetic",
+        "blade": "Carbon Steel",
+        "power": "Cordless (80min)",
+        "weight": "1 lb",
+        "bestFor": "Professional barbers prioritizing comfort and cordless reliability",
+        "badge": "Pro Choice"
+      },
+      {
+        "id": "babyliss-goldfx",
+        "name": "BaBylissPRO GoldFX",
+        "price": 199.99,
+        "currency": "$",
+        "rating": 4.7,
+        "reviews": 8934,
+        "amazonUrl": "https://www.amazon.com/dp/B09TCN6BHL?tag=barbersupp044-20",
+        "image": "https://m.media-amazon.com/images/I/91XXXXXXXXL._AC_SL1500_.jpg",
+        "shortDesc": "High-torque brushless motor with gold titanium blade",
+        "motor": "Brushless",
+        "blade": "Gold Titanium",
+        "power": "Corded",
+        "weight": "9.5 oz",
+        "bestFor": "Barbers doing 10+ fades per day",
+        "badge": "Premium"
+      },
+      {
+        "id": "wahl-senior",
+        "name": "Wahl Professional 5-Star Senior",
+        "price": 109.99,
+        "currency": "$",
+        "rating": 4.8,
+        "reviews": 18765,
+        "amazonUrl": "https://www.amazon.com/dp/B000VVT94G?tag=barbersupp044-20",
+        "image": "https://m.media-amazon.com/images/I/71XXXXXXXXL._AC_SL1500_.jpg",
+        "shortDesc": "Powerful V9000 motor for precision cutting",
+        "motor": "V9000",
+        "blade": "Adjustable",
+        "power": "Corded",
+        "weight": "10 oz",
+        "bestFor": "High-volume shops needing reliable corded power",
+        "badge": ""
+      },
+      {
+        "id": "oster-76",
+        "name": "Oster Classic 76",
+        "price": 129.99,
+        "currency": "$",
+        "rating": 4.6,
+        "reviews": 9876,
+        "amazonUrl": "https://www.amazon.com/dp/B0009XH5OG?tag=barbersupp044-20",
+        "image": "https://m.media-amazon.com/images/I/71XXXXXXXXL._AC_SL1500_.jpg",
+        "shortDesc": "Heavy-duty detachable blade clipper",
+        "motor": "Universal",
+        "blade": "Detachable",
+        "power": "Corded",
+        "weight": "1.2 lb",
+        "bestFor": "Barbers wanting versatility with detachable blades",
+        "badge": ""
+      }
+    ],
+    "comparison": [
+      { "id": "wahl-magic-clip", "name": "Wahl Magic Clip", "forWhat": "Best overall value", "weight": 9.2, "amazonUrl": "https://www.amazon.com/dp/B00UK8WFQO?tag=barbersupp044-20", "priceText": "$89.99" },
+      { "id": "andis-master", "name": "Andis Master", "forWhat": "Best cordless premium", "weight": 9.0, "amazonUrl": "https://www.amazon.com/dp/B0BJL7W4HP?tag=barbersupp044-20", "priceText": "$149.99" },
+      { "id": "babyliss-goldfx", "name": "BaBylissPRO GoldFX", "forWhat": "Best for heavy fading", "weight": 8.8, "amazonUrl": "https://www.amazon.com/dp/B09TCN6BHL?tag=barbersupp044-20", "priceText": "$199.99" },
+      { "id": "wahl-senior", "name": "Wahl Senior", "forWhat": "Best corded workhorse", "weight": 8.7, "amazonUrl": "https://www.amazon.com/dp/B000VVT94G?tag=barbersupp044-20", "priceText": "$109.99" },
+      { "id": "oster-76", "name": "Oster Classic 76", "forWhat": "Best detachable blade", "weight": 8.5, "amazonUrl": "https://www.amazon.com/dp/B0009XH5OG?tag=barbersupp044-20", "priceText": "$129.99" }
+    ],
+    "faq": [
+      { "q": "What's the best clipper for fades?", "a": "The BaByliss GoldFX ($199.99) and Wahl Magic Clip ($89.99) are top choices. BaByliss offers more power for thick hair, while Wahl provides better value and cordless freedom." },
+      { "q": "Should I buy a corded or cordless clipper?", "a": "Corded = unlimited runtime, more power. Cordless = freedom of movement, limited battery. Professional barbers often own both." },
+      { "q": "How long do clipper blades last?", "a": "With proper maintenance (oiling, cleaning), blades last 6-12 months. Replace when you notice pulling, snagging, or uneven cuts." },
+      { "q": "Can I use hair clippers for beard trimming?", "a": "Hair clippers work for beards, but dedicated trimmers give more precision for line-ups and detail work. Check our Best Trimmers guide." }
+    ]
+  },
+  "best-trimmers": {
+    "title": "Best Hair Trimmers for Barbers (Detail & Line-Up)",
+    "description": "Compare the best barber trimmers for precision work, line-ups, detailing, and beard shaping.",
+    "image": "/og-trimmers.jpg",
+    "category": "trimmers",
+    "keywords": ["best hair trimmers", "barber trimmers", "line up trimmer", "detail trimmer"],
+    "products": [],
+    "comparison": [],
+    "faq": []
+  },
+  "best-shavers": {
+    "title": "Best Foil Shavers for Barbers",
+    "description": "Top foil shavers for smooth fades, neck clean-ups, and finishing work in professional barbering.",
+    "image": "/og-shavers.jpg",
+    "category": "shavers",
+    "keywords": ["foil shaver barber", "best barber shaver", "fade finishing tools"],
+    "products": [],
+    "comparison": [],
+    "faq": []
+  },
+  "starter-kit": {
+    "title": "Best Barber Starter Kits (2026)",
+    "description": "Complete barber kits including clippers, trimmers, guards, and essential tools for professionals.",
+    "image": "/og-kits.jpg",
+    "category": "kits",
+    "keywords": ["barber kit", "starter barber tools", "professional barber equipment"],
+    "products": [],
+    "comparison": [],
+    "faq": []
+  }
+}
