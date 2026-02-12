@@ -1,36 +1,27 @@
 "use client";
 
-import AmazonLink from "./AmazonLink";
-
-export default function StickyCTA({
-  productId,
-  productName,
-  href,
-  variant,
-}: {
+type Props = {
   productId: string;
   productName: string;
   href: string;
-  variant?: string;
-}) {
+};
+
+export default function StickyCTA({ productName, href }: Props) {
   return (
     <div className="stickyCta">
       <div className="container stickyRow">
-        <div>
-          <div style={{ fontWeight: 800 }}>{productName}</div>
-          <div className="small">Editor top pick · Limited promos may apply</div>
-        </div>
-
-        <AmazonLink
+        <span style={{ fontSize: 14 }}>
+          <strong>Top Pick:</strong> {productName}
+        </span>
+        <a
           href={href}
-          productId={productId}
-          productName={productName}
-          placement="sticky"
-          variant={variant}
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn btnAccent"
+          style={{ padding: "8px 16px", fontSize: 13 }}
         >
-          Check on Amazon →
-        </AmazonLink>
+          Check Price &rarr;
+        </a>
       </div>
     </div>
   );

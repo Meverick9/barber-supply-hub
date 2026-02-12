@@ -1,32 +1,47 @@
-import stacks from "@/lib/toolStacks.json";
-import picks from "@/lib/picks-data.json";
-import ProductCard from "./ProductCard";
+type Tool = {
+  name: string;
+  category: string;
+  link?: string;
+};
 
-export default function ToolStack({ barberId }: { barberId: string }) {
-  const stack: any = (stacks as any[]).find((s) => s.barberId === barberId);
-  if (!stack) return null;
+type Props = {
+  barberName: string;
+  tools: Tool[];
+};
 
-  const allProducts = Object.values(picks as any).flatMap((p: any) => p.products);
-
+export default function ToolStack({ barberName, tools }: Props) {
   return (
     <div className="card" style={{ marginTop: 16 }}>
-      <h2 style={{ marginTop: 0 }}>Tool Stack</h2>
-      <div className="small">Updated: {stack.updated}</div>
-
-      <div className="grid2" style={{ marginTop: 12 }}>
-        {stack.stack.map((item: any, i: number) => {
-          const product = allProducts.find((p: any) => p.id === item.productId);
-          if (!product) return null;
-
-          return (
-            <div key={i}>
-              <ProductCard product={product} placement="tool_stack" />
-              <div className="small" style={{ marginTop: 6 }}>
-                <b>{item.role}</b> — {item.why}
-              </div>
+      <h3 style={{ marginTop: 0 }}>{barberName}&apos;s Tool Stack</h3>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {tools.map((tool, i) => (
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "8px 0",
+              borderBottom: "1px solid #242428",
+            }}
+          >
+            <div>
+              <strong>{tool.name}</strong>
+              <span className="small" style={{ marginLeft: 8 }}>{tool.category}</span>
             </div>
-          );
-        })}
+            {tool.link && (
+              <a
+                href={tool.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn"
+                style={{ padding: "4px 10px", fontSize: 11 }}
+              >
+                View
+              </a>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

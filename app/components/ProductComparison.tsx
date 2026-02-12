@@ -1,6 +1,4 @@
-import AmazonLink from "./AmazonLink";
-import BestValueBadge from "./BestValueBadge";
-import PriceDropBadge from "./PriceDropBadge";
+"use client";
 
 type ComparisonRow = {
   id: string;
@@ -12,71 +10,60 @@ type ComparisonRow = {
   priceDropPercent?: number;
 };
 
-function pickBestValue(rows: ComparisonRow[]) {
-  return rows.reduce((best, r) => (r.weight > best.weight ? r : best), rows[0]);
-}
-
-export default function ProductComparison({
-  title = "Quick comparison",
-  rows,
-  placement = "comparison",
-  variant,
-}: {
-  title?: string;
+type Props = {
+  title: string;
   rows: ComparisonRow[];
-  placement?: string;
-  variant?: string;
-}) {
-  const best = pickBestValue(rows);
+};
+
+export default function ProductComparison({ title, rows }: Props) {
+  if (!rows || rows.length === 0) return null;
 
   return (
-    <section className="card">
-      <h2 style={{ margin: "0 0 8px" }}>{title}</h2>
-      <p className="small" style={{ marginTop: 0 }}>
-        Picks are ranked by a transparent score rubric. We may earn affiliate commissions.
-      </p>
-
-      <table className="table" role="table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Best for</th>
-            <th>Score</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => {
-            const isBest = r.id === best.id;
-            return (
-              <tr key={r.id}>
+    <div className="card">
+      <h2 style={{ marginTop: 0 }}>{title}</h2>
+      <div style={{ overflowX: "auto" }}>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Best For</th>
+              <th>Score</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.id}>
+                <td style={{ fontWeight: 600 }}>{row.name}</td>
+                <td className="small">{row.forWhat}</td>
                 <td>
-                  <div className="row" style={{ gap: 8 }}>
-                    <span style={{ fontWeight: 800 }}>{r.name}</span>
-                    {isBest ? <BestValueBadge /> : null}
-                    {r.priceDropPercent ? <PriceDropBadge percent={r.priceDropPercent} /> : null}
-                  </div>
-                  <div className="small">{r.priceText ?? "Check price"}</div>
+                  <span style={{ color: "#ffd400", fontWeight: 700 }}>{row.weight}/10</span>
                 </td>
-                <td>{r.forWhat}</td>
-                <td className="small">{r.weight}</td>
-                <td style={{ textAlign: "right" }}>
-                  <AmazonLink
-                    href={r.amazonUrl}
-                    productId={r.id}
-                    productName={r.name}
-                    placement={placement}
-                    variant={variant}
+                <td>
+                  {row.priceText || "—"}
+                  {row.priceDropPercent && row.priceDropPercent > 0 && (
+                    <span style={{ color: "#22c55e", fontSize: 11, marginLeft: 6 }}>
+                      &darr;{row.priceDropPercent}%
+                    </span>
+                  )}
+                </td>
+                <td>
+                  <a
+                    href={row.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn"
+                    style={{ padding: "6px 12px", fontSize: 12 }}
                   >
-                    See →
-                  </AmazonLink>
+                    View
+                  </a>
                 </td>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </section>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }

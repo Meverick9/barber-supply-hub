@@ -2,24 +2,80 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main style={{ background: "#0a0a0a", color: "white", minHeight: "100vh", fontFamily: "sans-serif" }}>
-      {/* Hero */}
-      <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 20px", textAlign: "center" }}>
-        <h1 style={{ fontSize: "52px", fontWeight: "800", marginBottom: "20px", maxWidth: "800px" }}>
-          Find The Best Barber Tools — Chosen By Pros
-        </h1>
-        <p style={{ fontSize: "20px", opacity: 0.7, marginBottom: "40px" }}>
-          Used by 120k+ barbers worldwide
-        </p>
-        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center" }}>
-          <Link href="/picks/best-clippers" style={{ background: "#facc15", color: "black", padding: "16px 32px", borderRadius: "8px", textDecoration: "none", fontWeight: "700", fontSize: "18px" }}>
-            View Best Clippers
-          </Link>
-          <Link href="/compare" style={{ background: "transparent", color: "#facc15", padding: "16px 32px", borderRadius: "8px", textDecoration: "none", fontWeight: "700", fontSize: "18px", border: "2px solid #facc15" }}>
-            Compare All
-          </Link>
+    <>
+      <section className="hero">
+        <div className="heroGrid">
+          <div>
+            <h1 className="h1">Find The Best Barber Tools — Chosen By Pros</h1>
+            <p className="lead">
+              Not a store. A recommendation engine: quick picks, honest comparisons, and barber-first guidance.
+            </p>
+
+            <div className="row">
+              <Link className="btn btnAccent" href="/picks/best-clippers">
+                Start with Picks &rarr;
+              </Link>
+              <span className="badge">&check; Used by barbers worldwide</span>
+              <span className="badge">&#x1F50D; Comparison-first</span>
+            </div>
+
+            <hr className="hr" />
+
+            <div className="kpi">
+              <span className="chip">&star; Transparent scoring</span>
+              <span className="chip">&darr; Price drop badges</span>
+              <span className="chip">&zap; Trending timer</span>
+              <span className="chip">&#x1F4C8; GA4 tracking</span>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="badge">Editor&apos;s quick pick</div>
+            <div style={{ marginTop: 16 }}>
+              <div style={{ background: "#1a1a1e", borderRadius: 12, padding: 20, textAlign: "center" }}>
+                <h3 style={{ margin: "0 0 8px" }}>Wahl 5-Star Magic Clip</h3>
+                <p className="small" style={{ margin: "0 0 6px" }}>
+                  #1 Bestseller &mdash; 4.8&star; from 22,739 reviews
+                </p>
+                <p style={{ margin: "0 0 12px", fontWeight: 800, color: "#ffd400" }}>$89.99</p>
+                <a
+                  className="btn btnAccent"
+                  href="https://www.amazon.com/dp/B00UK8WFQO?tag=barbersupp044-20"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Check Price on Amazon &rarr;
+                </a>
+              </div>
+            </div>
+            <p className="small" style={{ marginTop: 10, marginBottom: 0 }}>
+              Click &quot;Start with Picks&quot; for our full ranked list.
+            </p>
+          </div>
         </div>
-      </div>
-    </main>
+      </section>
+
+      <section className="grid2" style={{ marginTop: 16 }}>
+        <div className="card">
+          <h2 style={{ marginTop: 0 }}>Picks</h2>
+          <p className="small">SEO magnets: one query, one best page.</p>
+          <div className="row">
+            <Link className="btn" href="/picks/best-clippers">Best Clippers</Link>
+            <Link className="btn" href="/picks/best-trimmers">Best Trimmers</Link>
+            <Link className="btn" href="/picks/starter-kit">Starter Kit</Link>
+          </div>
+        </div>
+
+        <div className="card">
+          <h2 style={{ marginTop: 0 }}>Trust Signals</h2>
+          <ul className="small" style={{ margin: 0, paddingLeft: 18 }}>
+            <li>Clear scoring rubric</li>
+            <li>Affiliate disclosure</li>
+            <li>Internal links between picks</li>
+            <li>Barber profiles &amp; tool stacks</li>
+          </ul>
+        </div>
+      </section>
+    </>
   );
 }

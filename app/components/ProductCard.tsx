@@ -1,74 +1,80 @@
+"use client";
 import AmazonLink from "./AmazonLink";
-import BestValueBadge from "./BestValueBadge";
-import PriceDropBadge from "./PriceDropBadge";
-import ScarcityTimer from "./ScarcityTimer";
-import CommunityBadge from "./community/CommunityBadge";
-import VoteButton from "./community/VoteButton";
-import Reviews from "./community/Reviews";
-import UsedByBarbers from "./community/UsedByBarbers";
-import StackPopularity from "./community/StackPopularity";
-import AddToStackButton from "./community/AddToStackButton";
 
 export type Product = {
   id: string;
   name: string;
-  short: string;
-  priceText?: string;
+  price: number;
+  currency?: string;
+  rating: number;
+  reviews: number;
   amazonUrl: string;
-  bestValue?: boolean;
-  priceDropPercent?: number;
-  stockLeft?: number;
+  image?: string;
+  shortDesc: string;
+  fullDesc?: string;
+  motor?: string;
+  blade?: string;
+  power?: string;
+  weight?: string;
+  bestFor?: string;
+  badge?: string;
 };
 
-export default function ProductCard({
-  product,
-  placement,
-  variant,
-}: {
+type Props = {
   product: Product;
-  placement: string;
-  variant?: string;
-}) {
+  placement?: string;
+};
+
+export default function ProductCard({ product, placement }: Props) {
   return (
-    <div className="card">
-      <div className="row" style={{ justifyContent: "space-between" }}>
-        <div className="row">
-          {product.bestValue ? <BestValueBadge /> : null}
-          {product.priceDropPercent ? <PriceDropBadge percent={product.priceDropPercent} /> : null}
-          {product.stockLeft ? <span className="badge">⚡ {product.stockLeft} left</span> : null}
-          <StackPopularity productId={product.id} />
-        </div>
-        <ScarcityTimer minutes={25} />
-      </div>
-
-      <h3 style={{ margin: "10px 0 6px" }}>{product.name}</h3>
-      <p className="small" style={{ margin: 0 }}>{product.short}</p>
-
-      <div className="row" style={{ justifyContent: "space-between", marginTop: 10 }}>
-        <div className="row">
-          <CommunityBadge productId={product.id} />
-          <VoteButton productId={product.id} />
-          <AddToStackButton productId={product.id} />
-        </div>
-        <UsedByBarbers productId={product.id} />
-      </div>
-
-      <div className="row" style={{ justifyContent: "space-between", marginTop: 12 }}>
-        <div className="price">{product.priceText ?? "Check price"}</div>
-
-        <AmazonLink
-          href={product.amazonUrl}
-          productId={product.id}
-          productName={product.name}
-          placement={placement}
-          variant={variant}
-          className="btn btnAccent"
+    <div
+      style={{
+        background: "#1a1a1e",
+        border: "1px solid #242428",
+        color: "#fff",
+        padding: "20px",
+        borderRadius: "12px",
+        marginBottom: "16px",
+      }}
+    >
+      {product.badge && (
+        <span
+          style={{
+            display: "inline-block",
+            background: "#ffd400",
+            color: "#000",
+            fontSize: "11px",
+            fontWeight: 700,
+            padding: "3px 8px",
+            borderRadius: "6px",
+            marginBottom: "8px",
+          }}
         >
-          View on Amazon →
-        </AmazonLink>
-      </div>
+          {product.badge}
+        </span>
+      )}
 
-      <Reviews productId={product.id} />
+      <h3 style={{ margin: "0 0 6px" }}>{product.name}</h3>
+
+      <p style={{ margin: "0 0 6px", fontSize: "14px", color: "#a7a7ad" }}>
+        <span>&star; {product.rating}</span>
+        <span> ({product.reviews.toLocaleString()} reviews)</span>
+        <span style={{ marginLeft: 12, fontWeight: 700, color: "#ffd400" }}>
+          {product.currency || "$"}{product.price}
+        </span>
+      </p>
+
+      {product.motor && (
+        <p style={{ margin: "0 0 4px", fontSize: "12px", color: "#888" }}>
+          {product.motor} &middot; {product.blade} &middot; {product.power} &middot; {product.weight}
+        </p>
+      )}
+
+      <p style={{ opacity: 0.8, fontSize: "14px", margin: "4px 0 12px" }}>
+        {product.shortDesc}
+      </p>
+
+      <AmazonLink href={product.amazonUrl}>Check Price on Amazon &rarr;</AmazonLink>
     </div>
   );
 }

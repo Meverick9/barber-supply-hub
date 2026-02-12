@@ -1,38 +1,36 @@
 "use client";
 
-import { trackOutboundClick, trackSelectProduct } from "@/lib/tracking";
-
 type Props = {
   href: string;
   children: React.ReactNode;
-  productId?: string;
-  productName?: string;
-  placement?: string;
-  variant?: string;
-  className?: string;
 };
 
-export default function AmazonLink({
-  href,
-  children,
-  productId,
-  productName,
-  placement,
-  variant,
-  className,
-}: Props) {
-  const onClick = () => {
-    trackOutboundClick({ url: href, productId, productName, placement, variant });
-    trackSelectProduct({ url: href, productId, productName, placement, variant });
+export default function AmazonLink({ href, children }: Props) {
+  const handleClick = () => {
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", "outbound_click", {
+        event_category: "affiliate",
+        event_label: href,
+      });
+    }
   };
 
   return (
     <a
       href={href}
-      onClick={onClick}
       target="_blank"
-      rel="nofollow sponsored noopener noreferrer"
-      className={className}
+      rel="noopener noreferrer"
+      onClick={handleClick}
+      style={{
+        display: "inline-block",
+        background: "#FFD814",
+        padding: "10px 18px",
+        borderRadius: "6px",
+        fontWeight: 600,
+        textDecoration: "none",
+        color: "#111",
+        marginTop: "10px",
+      }}
     >
       {children}
     </a>

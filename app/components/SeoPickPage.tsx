@@ -40,28 +40,39 @@ export default function SeoPickPage({ slug, title, intro, products, comparison, 
         </p>
       </section>
 
-      <section className="grid2">
-        {products.map((p) => (
-          <ProductCard key={p.id} product={p} placement={`seo_pick_${slug}`} />
-        ))}
-      </section>
+      {products.length > 0 ? (
+        <section className="grid2">
+          {products.map((p) => (
+            <ProductCard key={p.id} product={p} placement={`seo_pick_${slug}`} />
+          ))}
+        </section>
+      ) : (
+        <section className="card" style={{ marginTop: 16, textAlign: "center" }}>
+          <p className="muted">Products coming soon. Check back for our expert picks.</p>
+        </section>
+      )}
 
-      <div style={{ marginTop: 16 }}>
-        <ProductComparison title="Quick comparison" rows={comparison} />
-      </div>
+      {comparison.length > 0 && (
+        <div style={{ marginTop: 16 }}>
+          <ProductComparison title="Quick comparison" rows={comparison} />
+        </div>
+      )}
 
-      <section className="card" style={{ marginTop: 16 }}>
-        <h2 style={{ marginTop: 0 }}>FAQ</h2>
-        {faq.map((f, i) => (
-          <div key={i} style={{ marginBottom: 12 }}>
-            <b>{f.q}</b>
-            <p className="small" style={{ margin: "4px 0 0" }}>{f.a}</p>
-          </div>
-        ))}
-      </section>
+      {faq.length > 0 && (
+        <section className="card" style={{ marginTop: 16 }}>
+          <h2 style={{ marginTop: 0 }}>FAQ</h2>
+          {faq.map((f, i) => (
+            <div key={i} style={{ marginBottom: 12 }}>
+              <b>{f.q}</b>
+              <p className="small" style={{ margin: "4px 0 0" }}>{f.a}</p>
+            </div>
+          ))}
+        </section>
+      )}
 
       <InternalLinks current={slug} />
-      <StickyCTA productId={top.id} productName={top.name} href={top.amazonUrl} />
+
+      {top && <StickyCTA productId={top.id} productName={top.name} href={top.amazonUrl} />}
     </>
   );
 }
