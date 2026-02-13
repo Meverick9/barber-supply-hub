@@ -1,45 +1,41 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+
+const BASE = "https://barber-supply-hub.vercel.app";
+
+const reviewSlugs = [
+  "wahl-magic-clip",
+  "andis-master",
+  "babyliss-goldfx-clipper",
+  "wahl-senior",
+  "oster-76",
+  "babyliss-goldfx-trimmer",
+  "babyliss-fx-plus-trimmer",
+  "andis-gtx-exo",
+  "wahl-detailer-li",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://barber-supply-hub.vercel.app'
+  const now = new Date().toISOString();
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/picks/best-clippers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/picks/best-trimmers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/picks/starter-kit`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/compare`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    // Добавь сюда product pages когда создашь
-    // {
-    //   url: `${baseUrl}/reviews/wahl-magic-clip`,
-    //   lastModified: new Date(),
-    //   changeFrequency: 'monthly',
-    //   priority: 0.7,
-    // },
-  ]
+  const staticPages = [
+    { url: BASE, lastModified: now, changeFrequency: "weekly" as const, priority: 1.0 },
+    { url: `${BASE}/compare`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${BASE}/barbers`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 },
+  ];
+
+  const picksPages = ["best-clippers", "best-trimmers", "starter-kit"].map((slug) => ({
+    url: `${BASE}/picks/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
+
+  const reviewPages = reviewSlugs.map((slug) => ({
+    url: `${BASE}/reviews/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...picksPages, ...reviewPages];
 }
