@@ -2,8 +2,48 @@ import "./globals.css";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
 export const metadata = {
-  title: "Barber Supply Hub",
-  description: "Expert picks and comparisons of pro barber tools.",
+  metadataBase: new URL("https://barber-supply-hub.vercel.app"),
+  title: {
+    default: "Barber Supply Hub — Best Barber Tools Chosen By Pros",
+    template: "%s | Barber Supply Hub",
+  },
+  description:
+    "Not a store. A recommendation engine: quick picks, honest comparisons, and barber-first guidance for professional barber tools.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Barber Supply Hub",
+    title: "Barber Supply Hub — Best Barber Tools Chosen By Pros",
+    description: "Expert picks and comparisons of pro barber tools.",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Barber Supply Hub - Professional Barber Tools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Barber Supply Hub — Best Barber Tools Chosen By Pros",
+    description: "Expert picks and comparisons of pro barber tools.",
+    images: ["/og-image.svg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://barber-supply-hub.vercel.app",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,7 +69,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="footer">
           <div className="container footerRow">
             <span>&copy; {new Date().getFullYear()} Barber Supply Hub</span>
-            <span className="muted">Affiliate disclosure: we may earn commissions from qualifying purchases.</span>
+            <span className="muted">
+              Affiliate disclosure: we may earn commissions from qualifying purchases.
+            </span>
           </div>
         </footer>
       </body>

@@ -1,5 +1,18 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Barber Supply Hub — Best Barber Tools Chosen By Pros",
+  description:
+    "Not a store. A recommendation engine: quick picks, honest comparisons, and barber-first guidance for professional barber tools.",
+  openGraph: {
+    title: "Barber Supply Hub — Best Barber Tools Chosen By Pros",
+    description: "Expert picks and comparisons of pro barber tools.",
+    url: "https://barber-supply-hub.vercel.app",
+    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "Barber Supply Hub" }],
+  },
+  alternates: { canonical: "https://barber-supply-hub.vercel.app" },
+};
+
 export default function HomePage() {
   return (
     <>
@@ -24,7 +37,7 @@ export default function HomePage() {
             <div className="kpi">
               <span className="chip">&star; Transparent scoring</span>
               <span className="chip">&darr; Price drop badges</span>
-              <span className="chip">&zap; Trending timer</span>
+              <span className="chip">&#9889; Trending timer</span>
               <span className="chip">&#x1F4C8; GA4 tracking</span>
             </div>
           </div>
