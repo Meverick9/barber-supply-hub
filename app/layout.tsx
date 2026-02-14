@@ -42,7 +42,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: "https://barber-supply-hub.vercel.app",
+    canonical: "/",
   },
 };
 
