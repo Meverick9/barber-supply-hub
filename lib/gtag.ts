@@ -1,23 +1,20 @@
-declare global {
-  interface Window {
-    gtag?: (...args: any[]) => void;
-    dataLayer?: any[];
-  }
-}
+// lib/gtag.ts
 
-export function pageview(url: string) {
-  const id = process.env.NEXT_PUBLIC_GA_ID;
-  if (!id || typeof window === "undefined" || !window.gtag) return;
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
-  window.gtag("event", "page_view", {
-    page_location: url,
+export const pageview = (url: string) => {
+  if (typeof window === "undefined") return
+
+  window.gtag?.("config", GA_ID, {
     page_path: url,
-  });
+  })
 }
 
-export function event(name: string, params: Record<string, any>) {
-  const id = process.env.NEXT_PUBLIC_GA_ID;
-  if (!id || typeof window === "undefined" || !window.gtag) return;
+export const event = (
+  action: string,
+  parameters: Record<string, any>
+) => {
+  if (typeof window === "undefined") return
 
-  window.gtag("event", name, params);
+  window.gtag?.("event", action, parameters)
 }

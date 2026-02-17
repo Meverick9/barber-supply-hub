@@ -1,37 +1,41 @@
-import picks from "@/lib/picks-data.json";
-import SeoPickPage from "@/app/components/SeoPickPage";
+import type { Metadata } from "next"
+import { products } from "@/lib/data/products"
+import ProductCard from "@/app/components/ProductCard"
 
-export const metadata = {
-  title: "Best Hair Clippers for Barbers (2026)",
+export const metadata: Metadata = {
+  title: "Best Hair Clippers 2026 | Barber Supply Hub",
   description:
-    "Top-rated professional barber clippers compared by power, blade quality, durability, battery life, and value. Wahl vs Andis vs BaByliss.",
+    "Top professional hair clippers for barbers. Compare Wahl, BaByliss, Andis and more.",
+  alternates: {
+    canonical: "https://barbersupplyhub.com/picks/best-clippers",
+  },
   openGraph: {
-    title: "Best Hair Clippers for Barbers (2026) | Barber Supply Hub",
-    description: "Top-rated professional barber clippers compared. Wahl, Andis, BaByliss, Oster reviewed.",
-    url: "https://barber-supply-hub.vercel.app/picks/best-clippers",
-    images: [{ url: "/og-clippers.svg", width: 1200, height: 630, alt: "Best Hair Clippers for Barbers" }],
-    type: "article",
+    title: "Best Hair Clippers 2026",
+    description:
+      "Top professional hair clippers for barbers. Ratings, specs and real reviews.",
+    url: "https://barbersupplyhub.com/picks/best-clippers",
+    siteName: "Barber Supply Hub",
+    type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Best Hair Clippers for Barbers (2026)",
-    description: "Top-rated professional barber clippers compared.",
-    images: ["/og-clippers.svg"],
-  },
-  alternates: { canonical: "https://barber-supply-hub.vercel.app/picks/best-clippers" },
-};
+}
 
 export default function BestClippersPage() {
-  const data = (picks as any)["best-clippers"];
+  const clippers = products.filter(
+    (product) => product.category === "clippers"
+  )
 
   return (
-    <SeoPickPage
-      slug="best-clippers"
-      title={data.title}
-      intro={data.description}
-      products={data.products || []}
-      comparison={data.comparison || []}
-      faq={data.faq || []}
-    />
-  );
+    <div className="container">
+      <h1 className="pageTitle">Best Hair Clippers</h1>
+
+      <div className="grid2">
+        {clippers.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }

@@ -1,80 +1,63 @@
-"use client";
-import AmazonLink from "./AmazonLink";
+"use client"
 
-export type Product = {
-  id: string;
-  name: string;
-  price: number;
-  currency?: string;
-  rating: number;
-  reviews: number;
-  amazonUrl: string;
-  image?: string;
-  shortDesc: string;
-  fullDesc?: string;
-  motor?: string;
-  blade?: string;
-  power?: string;
-  weight?: string;
-  bestFor?: string;
-  badge?: string;
-};
+import Link from "next/link"
+import { Product } from "@/lib/data/products"
+import { amazonDpUrl } from "@/lib/amazon"
 
 type Props = {
-  product: Product;
-  placement?: string;
-};
+  product: Product
+}
 
-export default function ProductCard({ product, placement }: Props) {
+export default function ProductCard({ product }: Props) {
+  const href = amazonDpUrl(product.asin)
+
   return (
-    <div
-      style={{
-        background: "#1a1a1e",
-        border: "1px solid #242428",
-        color: "#fff",
-        padding: "20px",
-        borderRadius: "12px",
-        marginBottom: "16px",
-      }}
-    >
-      {product.badge && (
-        <span
-          style={{
-            display: "inline-block",
-            background: "#ffd400",
-            color: "#000",
-            fontSize: "11px",
-            fontWeight: 700,
-            padding: "3px 8px",
-            borderRadius: "6px",
-            marginBottom: "8px",
-          }}
-        >
-          {product.badge}
-        </span>
-      )}
+    <div className="card productCard">
+      <div className="productTop">
+        <div>
+          <h3 className="productTitle">
+            <Link href={`/p/${product.slug}`}>{product.name}</Link>
+          </h3>
 
-      <h3 style={{ margin: "0 0 6px" }}>{product.name}</h3>
+          <div className="muted small">{product.brand}</div>
+        </div>
 
-      <p style={{ margin: "0 0 6px", fontSize: "14px", color: "#a7a7ad" }}>
-        <span>&star; {product.rating}</span>
-        <span> ({product.reviews.toLocaleString()} reviews)</span>
-        <span style={{ marginLeft: 12, fontWeight: 700, color: "#ffd400" }}>
-          {product.currency || "$"}{product.price}
-        </span>
-      </p>
+        <div className="rating">⭐ {product.rating}</div>
+      </div>
 
-      {product.motor && (
-        <p style={{ margin: "0 0 4px", fontSize: "12px", color: "#888" }}>
-          {product.motor} &middot; {product.blade} &middot; {product.power} &middot; {product.weight}
-        </p>
-      )}
+      <div className="hr" />
 
-      <p style={{ opacity: 0.8, fontSize: "14px", margin: "4px 0 12px" }}>
-        {product.shortDesc}
-      </p>
+      <div className="specs">
+        <div>
+          <span className="muted">Power:</span> {product.power}
+        </div>
+        <div>
+          <span className="muted">Battery:</span> {product.battery}
+        </div>
+      </div>
 
-      <AmazonLink href={product.amazonUrl}>Check Price on Amazon &rarr;</AmazonLink>
+      <div className="hr" />
+
+      <div className="productBottom">
+        <div className="price">${product.price}</div>
+
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="nofollow sponsored noopener noreferrer"
+            className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg transition"
+          >
+            Check Price on Amazon →
+          </a>
+        ) : (
+          <span className="muted small">ASIN missing</span>
+        )}
+      </div>
+
+      <div className="small muted">
+        <Link href={`/picks/${product.category}`}>More {product.category}</Link>
+      </div>
     </div>
-  );
+  )
 }
