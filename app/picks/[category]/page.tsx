@@ -3,24 +3,28 @@ import ProductCard from "@/app/components/ProductCard"
 import type { Metadata } from "next"
 
 type Props = {
-  params: { category: string }
+  params: Promise<{ category: string }>
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { category } = await params
+
   return {
-    title: `Best ${params.category} 2026 | Barber Supply Hub`,
-    description: `Top rated ${params.category} ranked by performance and price.`
+    title: `Best ${category} 2026 | Barber Supply Hub`,
+    description: `Top rated ${category} ranked by performance and price.`
   }
 }
 
-export default function CategoryPage({ params }: Props) {
+export default async function CategoryPage({ params }: Props) {
+  const { category } = await params
+
   const filtered = products.filter(
-    p => p.category === params.category
+    p => p.category === category
   )
 
   return (
     <div className="container">
-      <h1>Best {params.category}</h1>
+      <h1>Best {category}</h1>
 
       <div className="grid2">
         {filtered.map(product => (

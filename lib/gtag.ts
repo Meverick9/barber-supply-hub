@@ -1,20 +1,18 @@
-// lib/gtag.ts
-
-export const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ""
 
 export const pageview = (url: string) => {
-  if (typeof window === "undefined") return
+  if (!GA_ID || typeof window === "undefined") return
 
-  window.gtag?.("config", GA_ID, {
+  window.gtag("config", GA_ID, {
     page_path: url,
   })
 }
 
 export const event = (
   action: string,
-  parameters: Record<string, any>
+  params: Record<string, any>
 ) => {
   if (typeof window === "undefined") return
 
-  window.gtag?.("event", action, parameters)
+  window.gtag("event", action, params)
 }

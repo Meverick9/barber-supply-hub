@@ -1,49 +1,58 @@
 import { notFound } from "next/navigation"
 import { products } from "@/lib/data/products"
-import type { Product } from "@/lib/data/products"
+import { amazonDpUrl } from "@/lib/amazon"
+import type { Metadata } from "next"
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export function generateStaticParams() {
-  return products.map((product) => ({
-    slug: product.slug
-  }))
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const { slug } = await params
+  const product = products.find(p => p.slug === slug)
+
+  if (!product) {
+    return { title: "Product Not Found" }
+  }
+
+  return {
+    title: `${product.name} Review | Barber Supply Hub`,
+    description: `Full professional breakdown of ${product.name}.`
+  }
 }
 
-export default function ProductPage({ params }: Props) {
-  const product = products.find(
-    (p) => p.slug === params.slug
-  )
+export default async function ProductPage(
+  { params }: Props
+) {
+  const { slug } = await params
+  const product = products.find(p => p.slug === slug)
 
   if (!product) return notFound()
 
   return (
-    <div className="container">
+    <main className="container article">
       <h1>{product.name}</h1>
+
       <p className="muted">{product.brand}</p>
 
-      <div className="card" style={{ marginTop: 20 }}>
-        <p>{product.description}</p>
+      <div className="hr" />
 
-        <div className="hr" />
+      <p><strong>Power:</strong> {product.power}</p>
+      <p><strong>Battery:</strong> {product.battery}</p>
+      <p><strong>Rating:</strong> ⭐ {product.rating}</p>
 
-        <div>Power: {product.power}</div>
-        <div>Battery: {product.battery}</div>
-
-        <div className="hr" />
-
-        <div className="price">${product.price}</div>
-
+      {product.asin && (
         <a
-          href={product.affiliateUrl}
+          href={amazonDpUrl(product.asin)}
           target="_blank"
-          className="btn btnAccent"
+          rel="nofollow sponsored noopener noreferrer"
+          className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg transition"
         >
-          Check Price
+          Check Price on Amazon →
         </a>
-      </div>
-    </div>
+      )}
+    </main>
   )
 }
