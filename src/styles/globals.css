@@ -151,3 +151,5 @@ section{padding:80px 0;}
   .card-rank{font-size:28px;width:36px;}
   .cta-price{font-size:24px;}
 }
+
+.show-mob{display:none!important;}@media(max-width:960px){.show-mob{display:flex!important;}}
