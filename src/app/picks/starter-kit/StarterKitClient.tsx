@@ -17,8 +17,8 @@ const BUILDS = {
     items:[
       {emoji:'✂️',name:'Wahl 5-Star Magic Clip',role:{en:'Primary Clipper — Fades & Blends',es:'Cortadora Principal — Fades y Mezclas',de:'Haupt-Clipper — Fades & Blends'},price:89.99,asin:'B00UK8WFQO',why:{en:'Most forgiving clipper for learners. Largest tutorial community. Taper lever perfect for blending.',es:'Cortadora más indulgente para principiantes. Comunidad de tutoriales más grande.',de:'Vergebendstes Clipper für Lernende. Größte Tutorial-Community.'},priority:'essential'},
       {emoji:'🔪',name:'Andis T-Outliner Cordless',role:{en:'Lineup Trimmer',es:'Recortadora de Lineup',de:'Lineup-Trimmer'},price:89.99,asin:'B0BJL7W4HP',why:{en:'Carbon steel T-blade for crisp lineups. The industry standard trimmer used by pros worldwide.',es:'Cuchilla T de carbono para lineups nítidos. El recortador estándar de la industria.',de:'Karbonstahl-T-Klinge für scharfe Lineups. Der Industrie-Standard-Trimmer.'},priority:'essential'},
-      {emoji:'💧',name:'Wahl Clipper Oil',role:{en:'Blade Oil',es:'Aceite de Cuchilla',de:'Klingenöl'},price:6.99,asin:'B00006IFIG',why:{en:'Oil before every use. Extends blade life 3x. Essential maintenance.',es:'Aceita antes de cada uso. Extiende la vida de la cuchilla 3 veces.',de:'Vor jedem Einsatz ölen. Verlängert Klingenlebensdauer 3x.'},priority:'essential'},
-      {emoji:'❄️',name:'Andis Cool Care Spray',role:{en:'5-in-1 Blade Spray',es:'Spray 5 en 1 para Cuchilla',de:'5-in-1 Klingenspray'},price:10.99,asin:'B00006IFIG',why:{en:'Cools, disinfects, lubricates, prevents rust, conditions. Spray after every client.',es:'Enfría, desinfecta, lubrica, previene óxido. Aplica después de cada cliente.',de:'Kühlt, desinfiziert, schmiert, verhindert Rost. Nach jedem Kunden sprühen.'},priority:'essential'},
+      {emoji:'💧',name:'Wahl Clipper Oil',role:{en:'Blade Oil',es:'Aceite de Cuchilla',de:'Klingenöl'},price:6.99,asin:'B0000DDCU7',why:{en:'Oil before every use. Extends blade life 3x. Essential maintenance.',es:'Aceita antes de cada uso. Extiende la vida de la cuchilla 3 veces.',de:'Vor jedem Einsatz ölen. Verlängert Klingenlebensdauer 3x.'},priority:'essential'},
+      {emoji:'❄️',name:'Andis Cool Care Spray',role:{en:'5-in-1 Blade Spray',es:'Spray 5 en 1 para Cuchilla',de:'5-in-1 Klingenspray'},price:10.99,asin:'B00BNRPBH0',why:{en:'Cools, disinfects, lubricates, prevents rust, conditions. Spray after every client.',es:'Enfría, desinfecta, lubrica, previene óxido. Aplica después de cada cliente.',de:'Kühlt, desinfiziert, schmiert, verhindert Rost. Nach jedem Kunden sprühen.'},priority:'essential'},
       {emoji:'📦',name:'Wahl Premium Cutting Guides',role:{en:'Guard Set (8 guards)',es:'Set de Guardas (8 guardas)',de:'Aufsatz-Set (8 Aufsätze)'},price:14.99,asin:'B00UK8WFQO',why:{en:'Magnetic guards for consistent lengths. Sizes 1/8 to 1" included.',es:'Guardas magnéticas para longitudes consistentes. Tallas 1/8 a 1 pulgada.',de:'Magnetische Aufsätze für konsistente Längen.'},priority:'recommended'},
     ]
   },
@@ -31,8 +31,8 @@ const BUILDS = {
       {emoji:'🪒',name:'Wahl 5-Star Balding #8110',role:{en:'Bald Fade Specialist',es:'Especialista Fade al Cero',de:'Bald Fade Spezialist'},price:44.99,asin:'B000VVT94G',why:{en:'V5000+ EM motor for skin-close cuts. The best $44.99 investment in barbering.',es:'Motor V5000+ para cortes al ras. La mejor inversión de $44.99 en barbería.',de:'V5000+ EM-Motor für hautnahe Schnitte. Die beste $44,99-Investition.'},priority:'essential'},
       {emoji:'🔪',name:'Andis T-Outliner Cordless',role:{en:'Primary Lineup Trimmer',es:'Recortadora Principal de Lineup',de:'Haupt-Lineup-Trimmer'},price:89.99,asin:'B0BJL7W4HP',why:{en:'7,200 SPM constant-speed carbon steel T-blade. Industry standard.',es:'7,200 SPM cuchilla T de carbono de velocidad constante. Estándar de la industria.',de:'7.200 SPM Konstantgeschwindigkeit Karbonstahl-T-Klinge.'},priority:'essential'},
       {emoji:'✏️',name:'Andis Slimline Pro Li',role:{en:'Detail Trimmer — Ears, Temples, Kids',es:'Recortadora Detalle — Orejas, Sienes',de:'Detail-Trimmer — Ohren, Schläfen'},price:64.99,asin:'B0BRYP4NGB',why:{en:'Ultra-slim 0.3 lb profile for tight areas. The perfect second trimmer.',es:'Perfil ultra-delgado 0.3 lbs para áreas estrechas. El segundo recortador perfecto.',de:'Ultra-schlankes 0,3-lbs-Profil für enge Bereiche.'},priority:'essential'},
-      {emoji:'💧',name:'Wahl Clipper Oil',role:{en:'Blade Oil',es:'Aceite',de:'Klingenöl'},price:6.99,asin:'B00006IFIG',why:{en:'Oil before every use.',es:'Aceita antes de cada uso.',de:'Vor jedem Einsatz ölen.'},priority:'essential'},
-      {emoji:'❄️',name:'Andis Cool Care 5-in-1',role:{en:'Blade Spray',es:'Spray Cuchilla',de:'Klingenspray'},price:10.99,asin:'B00006IFIG',why:{en:'After every client.',es:'Después de cada cliente.',de:'Nach jedem Kunden.'},priority:'essential'},
+      {emoji:'💧',name:'Wahl Clipper Oil',role:{en:'Blade Oil',es:'Aceite',de:'Klingenöl'},price:6.99,asin:'B0000DDCU7',why:{en:'Oil before every use.',es:'Aceita antes de cada uso.',de:'Vor jedem Einsatz ölen.'},priority:'essential'},
+      {emoji:'❄️',name:'Andis Cool Care 5-in-1',role:{en:'Blade Spray',es:'Spray Cuchilla',de:'Klingenspray'},price:10.99,asin:'B00BNRPBH0',why:{en:'After every client.',es:'Después de cada cliente.',de:'Nach jedem Kunden.'},priority:'essential'},
       {emoji:'🧰',name:'Babyliss Pro Trimmer Bag',role:{en:'Tool Bag',es:'Bolsa de Herramientas',de:'Werkzeugtasche'},price:29.99,asin:'B07D7ZRXPD',why:{en:'Professional tool organization. Fits all 4 tools + accessories.',es:'Organización profesional de herramientas. Cabe todo.',de:'Professionelle Werkzeugorganisation.'},priority:'recommended'},
       {emoji:'📦',name:'Guard Set + Clipper Mat',role:{en:'Accessories',es:'Accesorios',de:'Zubehör'},price:24.99,asin:'B00UK8WFQO',why:{en:'Full guard set and non-slip mat for your station.',es:'Set completo de guardas y tapete antideslizante.',de:'Vollständiges Aufsatz-Set und rutschfeste Matte.'},priority:'recommended'},
     ]
@@ -207,6 +207,9 @@ export default function StarterKitClient() {
     </main>
   )
 }
+
+
+
 
 
 
