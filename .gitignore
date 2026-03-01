@@ -1,0 +1,19 @@
+# env — never commit real keys!
+.env.local
+.env*.local
+
+# Next.js
+.next/
+out/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+
+# Vercel
+.vercel
+
+.vercel
+.env*.local

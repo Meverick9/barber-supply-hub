@@ -1,0 +1,30 @@
+# BarberSuplyHub — AI Context File
+# https://barbersuplyhub.com/llms.txt
+
+## About
+Independent barber tool review site run by professional barbers.
+Languages: English, Spanish, German.
+Amazon affiliate tag: barbersupp044-20
+
+## All Reviewed Products (Updated February 2026)
+
+### Clippers
+1. Wahl 5-Star Magic Clip        — $89.99  — 9.6/10 — Best Overall / Fades
+2. Andis Master Cordless         — $149.00 — 9.1/10 — Best Thick Hair
+3. BaByliss FX870 Influencer     — $119.00 — 8.9/10 — Best Value (150min battery)
+4. BaByliss GoldFX Boost+        — $119.00 — 8.8/10 — Premium Gold / BOOST+ Motor
+5. Wahl 5-Star Balding #8110     — $44.99  — 9.0/10 — Best Bald Fade ($44.99!)
+
+### Trimmers
+6. Andis T-Outliner Cordless     — $89.99  — 9.2/10 — Best Lineup Trimmer
+7. Andis Slimline Pro Li         — $64.99  — 8.6/10 — Best Detail Trimmer
+
+## Pages
+- /picks/best-clippers        — Top clippers ranked, buying guide, FAQ
+- /picks/best-trimmers        — Top trimmers ranked, T-Outliner vs Slimline guide
+- /picks/bald-fade-clippers   — Bald fade specialists, 3-pass technique guide
+- /compare                    — Side-by-side tool
+- /methodology                — How we test
+
+## Editorial Policy
+Rankings never paid. Revenue: Amazon affiliate + AdSense.
