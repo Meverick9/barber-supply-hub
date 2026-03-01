@@ -296,14 +296,14 @@ export default function BestClippersClient() {
               </div>
 
               {/* Body */}
-              <div style={{ padding:24, display:'grid', gridTemplateColumns:'1fr 1fr', gap:24 }}>
+              <div className="grid-2 card-body">
                 {/* Left: verdict + pros/cons */}
                 <div>
                   <div style={{ fontSize:10, fontWeight:700, letterSpacing:'.12em', textTransform:'uppercase', color:'var(--white-60)', marginBottom:10 }}>{L(PAGE_T.verdict)}</div>
                   <p style={{ fontSize:13, color:'var(--white-60)', lineHeight:1.75, marginBottom:20 }} itemProp="description">
                     {T(p.verdict, lang)}
                   </p>
-                  <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
+                  <div className="grid-pros-cons">
                     <div>
                       <div style={{ fontSize:10, fontWeight:700, letterSpacing:'.1em', textTransform:'uppercase', color:'var(--green)', marginBottom:8 }}>{L(PAGE_T.pros)}</div>
                       <ul style={{ listStyle:'none', display:'flex', flexDirection:'column', gap:5 }}>
@@ -344,7 +344,7 @@ export default function BestClippersClient() {
                   {/* Specs grid */}
                   <div>
                     <div style={{ fontSize:10, fontWeight:700, letterSpacing:'.1em', textTransform:'uppercase', color:'var(--white-60)', marginBottom:10 }}>{L(PAGE_T.specs)}</div>
-                    <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'6px 16px' }}>
+                    <div className="grid-specs">
                       {[
                         ['Motor', p.specs.motor],
                         ['Battery', p.specs.battery],
@@ -410,7 +410,7 @@ export default function BestClippersClient() {
             </div>
             <Link href="/methodology" className="sec-link">{L(PAGE_T.fullMethod)}</Link>
           </div>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:14 }}>
+          <div className="grid-3">
             {methods.map(({ icon, label, desc }) => (
               <div key={label} style={{ background:'var(--dark-2)', border:'1px solid var(--border)', borderRadius:4, padding:20 }}>
                 <div style={{ fontSize:28, marginBottom:12 }}>{icon}</div>
@@ -476,7 +476,7 @@ export default function BestClippersClient() {
               <h2 className="sec-title">{L(PAGE_T.related)}</h2>
             </div>
           </div>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:14 }}>
+          <div className="grid-3">
             {related.map(item => (
               <Link key={item.href} href={item.href}
                 style={{ display:'flex', flexDirection:'column', gap:10, padding:24, background:'var(--dark-2)', border:'1px solid var(--border)', borderRadius:4, transition:'border-color .3s' }}
@@ -495,3 +495,5 @@ export default function BestClippersClient() {
     </main>
   )
 }
+
+

@@ -91,3 +91,63 @@ section{padding:80px 0;}
 
 @media(max-width:960px){section{padding:56px 0;}.hide-mob{display:none!important;}}
 @media(max-width:600px){.container{padding:0 16px;}section{padding:40px 0;}}
+
+/* ═══════════════════════════════════════
+   UTILITY CLASSES — mobile responsive
+   ═══════════════════════════════════════ */
+
+/* Grid утилиты */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.grid-specs{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;}
+.grid-pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+/* Card body */
+.card-body{padding:24px;}
+.card-header{display:flex;align-items:center;gap:16px;padding:20px 24px;border-bottom:1px solid var(--border);background:var(--dark-3);}
+.card-rank{font-family:var(--f-display);font-size:48px;color:var(--accent);width:56px;flex-shrink:0;line-height:1;}
+.card-score{text-align:right;flex-shrink:0;}
+.card-score-num{font-family:var(--f-display);font-size:48px;line-height:1;}
+
+/* CTA блок */
+.cta-box{margin-top:auto;padding:16px;background:var(--dark-3);border-radius:4px;border:1px solid var(--border);}
+.cta-price{font-family:var(--f-display);font-size:36px;line-height:1;}
+
+/* ─── MOBILE 600px ─── */
+@media(max-width:600px){
+  /* Гриды → 1 колонка */
+  .grid-2,.grid-pros-cons,.grid-specs{grid-template-columns:1fr !important;}
+  .grid-3{grid-template-columns:1fr !important;}
+
+  /* Карточка header */
+  .card-header{padding:16px;}
+  .card-rank{font-size:32px;width:40px;}
+  .card-score-num{font-size:32px;}
+  .card-body{padding:16px;}
+
+  /* CTA */
+  .cta-price{font-size:28px;}
+
+  /* Кнопка полная ширина */
+  .btn-primary{width:100%;justify-content:center;padding:16px 20px;font-size:13px;}
+
+  /* Score bar */
+  .score-bar__label{width:54px;font-size:10px;}
+
+  /* Секции */
+  section{padding:32px 0;}
+  .sec-hd{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:20px;}
+
+  /* Скрываем рекламу */
+  .ad-unit{display:none!important;}
+
+  /* Sticky filter bar — меньше кнопки */
+  .filter-bar button{font-size:10px!important;padding:5px 8px!important;}
+}
+
+/* ─── MOBILE 400px ─── */
+@media(max-width:400px){
+  .container,.container-sm{padding:0 12px;}
+  .card-rank{font-size:28px;width:36px;}
+  .cta-price{font-size:24px;}
+}
