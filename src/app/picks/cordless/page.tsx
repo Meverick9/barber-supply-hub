@@ -1,30 +1,30 @@
 import type { Metadata } from 'next'
-import ScissorsClient from './ScissorsClient'
+import CordlessClient from './CordlessClient'
 import { SITE_URL, getProductsByCategory } from '@/lib/data'
 
 const PRODUCTS = getProductsByCategory('scissors')
 
 export const metadata: Metadata = {
-  title: 'Best Barber Scissors 2026 — Top 8 Tested by Pro Barbers',
+  title: 'Best Cordless Clippers 2026 — Top 8 Tested by Pro Barbers',
   description: 'We tested 32 professional barber shears in real shops in NYC, LA & London. Top 8 ranked by sharpness, edge retention & comfort. Updated February 2026.',
-  keywords: ['best barber scissors 2026','professional barber shears','razor edge shears','Japanese steel scissors barber','ULG shears review','barber scissors guide'],
+  keywords: ['Best Cordless Clippers 2026','professional barber shears','razor edge shears','Japanese steel scissors barber','ULG shears review','barber scissors guide'],
   alternates: {
-    canonical: `${SITE_URL}/picks/scissors`,
+    canonical: `${SITE_URL}/picks/cordless`,
     languages: {
-      'en': `${SITE_URL}/picks/scissors`,
-      'es': `${SITE_URL}/es/picks/scissors`,
+      'en': `${SITE_URL}/picks/cordless`,
+      'es': `${SITE_URL}/es/picks/cordless`,
     },
   },
   openGraph: {
-    title: 'Best Barber Scissors 2026 — 32 Tested by Pro Barbers',
+    title: 'Best Cordless Clippers 2026 — 32 Tested by Pro Barbers',
     description: 'Top 8 ranked by sharpness, edge retention & comfort. Real barbers, real cuts.',
     type: 'article',
-    url: `${SITE_URL}/picks/scissors`,
+    url: `${SITE_URL}/picks/cordless`,
     siteName: 'BarberSuplyHub',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Barber Scissors 2026 — Top 8 Tested',
+    title: 'Best Cordless Clippers 2026 — Top 8 Tested',
     description: 'Top 8 scissors for professional barbers ranked by sharpness & comfort.',
     site: '@barbersuplyhub',
   },
@@ -36,7 +36,7 @@ const BREADCRUMB_SCHEMA = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
     { '@type': 'ListItem', position: 2, name: 'Picks', item: `${SITE_URL}/picks` },
-    { '@type': 'ListItem', position: 3, name: 'Best Scissors 2026', item: `${SITE_URL}/picks/scissors` },
+    { '@type': 'ListItem', position: 3, name: 'Best Scissors 2026', item: `${SITE_URL}/picks/cordless` },
   ],
 }
 
@@ -53,9 +53,9 @@ const FAQ_SCHEMA = {
 const ARTICLE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Barber Scissors 2026 — Top 8 Tested by Pro Barbers',
+  headline: 'Best Cordless Clippers 2026 — Top 8 Tested by Pro Barbers',
   description: 'We tested 32 professional barber shears. Top 8 ranked by sharpness, edge retention & comfort.',
-  url: `${SITE_URL}/picks/scissors`,
+  url: `${SITE_URL}/picks/cordless`,
   datePublished: '2026-01-15T09:00:00Z',
   dateModified: '2026-02-24T09:00:00Z',
   author: { '@type': 'Person', name: 'Marcus Webb', jobTitle: 'Master Barber, 14 years NYC' },
@@ -72,7 +72,7 @@ const PRODUCT_SCHEMAS = PRODUCTS.map(p => ({
   offers: { '@type': 'Offer', priceCurrency: 'USD', price: p.price.toString(), availability: 'https://schema.org/InStock', url: `https://www.amazon.com/dp/${p.asin}?tag=barbersupp044-20` },
 }))
 
-export default function ScissorsPage() {
+export default function CordlessPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
@@ -81,7 +81,8 @@ export default function ScissorsPage() {
       {PRODUCT_SCHEMAS.map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
-      <ScissorsClient />
+      <CordlessClient />
     </>
   )
 }
+
