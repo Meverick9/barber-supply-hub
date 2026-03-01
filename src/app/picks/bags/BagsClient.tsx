@@ -115,7 +115,7 @@ export default function BagsClient() {
           <p style={{ margin: 0, lineHeight: 1.6 }}>{T(PAGE_T.qa, l)}</p>
         </div>
         <p style={{ marginTop: 24, opacity: 0.7, lineHeight: 1.7 }}>{T(PAGE_T.intro, l)}</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24, marginTop: 32 }}>
+        <div className="grid-4">
           {STATS.map(s => (
             <div key={s.n}>
               <p style={{ fontSize: 40, fontWeight: 900, color: 'var(--accent)', margin: 0 }}>{s.n}</p>
@@ -153,7 +153,7 @@ export default function BagsClient() {
                 <p style={{ margin: 0, fontSize: 11, opacity: 0.5 }}>/ 10 score</p>
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderTop: '1px solid var(--border)' }}>
+            <div className="grid-2">
               <div style={{ padding: 24 }}>
                 <p style={{ margin: '0 0 8px', fontSize: 11, fontWeight: 700, letterSpacing: 1, opacity: 0.5 }}>{T(PAGE_T.verdict, l)}</p>
                 <p style={{ margin: '0 0 16px', lineHeight: 1.6, fontSize: 14 }}>{p.verdict[l] ?? p.verdict.en}</p>
@@ -189,7 +189,7 @@ export default function BagsClient() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
         <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: 'var(--accent)', marginBottom: 24 }}>{T(PAGE_T.methodTitle, l)}</p>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+        <div className="grid-pros-cons">
           {METHODS_DATA.map((m) => (
             <div key={m.label} style={{ padding: 24, border: '1px solid var(--border)', borderRadius: 4 }}>
               <div style={{ fontSize: 28, marginBottom: 12 }}>{m.icon}</div>
@@ -231,7 +231,7 @@ export default function BagsClient() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px 80px' }}>
         <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: 'var(--accent)', marginBottom: 8 }}>{T(PAGE_T.relatedKicker, l).toUpperCase()}</p>
         <h2 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, margin: '0 0 32px' }}>{T(PAGE_T.related, l)}</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
+        <div className="grid-3">
           {RELATED_DATA.map(r => (
             <Link key={r.href} href={r.href} style={{ padding: 24, border: '1px solid var(--border)', borderRadius: 4, textDecoration: 'none', color: 'var(--fg)', display: 'block' }}>
               <div style={{ fontSize: 28, marginBottom: 12 }}>{r.emoji}</div>
@@ -245,4 +245,6 @@ export default function BagsClient() {
     </div>
   )
 }
+
+
 

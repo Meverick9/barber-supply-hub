@@ -170,11 +170,11 @@ export default function BestTrimmersClient() {
                 </div>
               </div>
 
-              <div style={{ padding: 24, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+              <div className="grid-2 card-body">
                 <div>
                   <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--white-60)', marginBottom: 10 }}>{L(PAGE_T.verdict)}</div>
                   <p style={{ fontSize: 13, color: 'var(--white-60)', lineHeight: 1.75, marginBottom: 20 }} itemProp="description">{T(p.verdict, lang)}</p>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div className="grid-pros-cons">
                     <div>
                       <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--green)', marginBottom: 8 }}>{L(PAGE_T.pros)}</div>
                       <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 5 }}>
@@ -287,7 +287,7 @@ export default function BestTrimmersClient() {
               <h2 className="sec-title">{lang === 'es' ? 'RELACIONADOS' : lang === 'de' ? 'VERWANDTE' : 'RELATED PICKS'}</h2>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14 }}>
+          <div className="grid-3">
             {[
               { href: '/picks/best-clippers', icon: '✂️', en: 'Best Clippers 2026', es: 'Mejores Cortadoras 2026', de: 'Beste Haarschneider 2026', suben: 'Top 5 ranked', subes: 'Top 5 clasificadas', subde: 'Top 5 bewertet' },
               { href: '/picks/starter-kit', icon: '🎯', en: 'Starter Kit Guide', es: 'Guía Kit Inicial', de: 'Starter-Set-Guide', suben: 'Everything a new barber needs', subes: 'Todo para un nuevo barbero', subde: 'Alles für neue Barbiere' },
@@ -315,4 +315,6 @@ export default function BestTrimmersClient() {
     </main>
   )
 }
+
+
 

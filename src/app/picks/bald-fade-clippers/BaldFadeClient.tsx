@@ -138,10 +138,10 @@ export default function BaldFadeClient() {
                   <div style={{ fontSize: 11, color: 'var(--white-60)' }}>/10</div>
                 </div>
               </div>
-              <div style={{ padding: 24, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+              <div className="grid-2 card-body">
                 <div>
                   <p style={{ fontSize: 13, color: 'var(--white-60)', lineHeight: 1.75, marginBottom: 20 }}>{T(p.verdict, lang)}</p>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div className="grid-pros-cons">
                     <div>
                       <div style={{ fontSize: 10, fontWeight: 700, color: 'var(--green)', marginBottom: 8 }}>{L(PAGE_T.pros)}</div>
                       <ul style={{ listStyle: 'none' }}>
@@ -225,7 +225,7 @@ export default function BaldFadeClient() {
           <div className="sec-hd">
             <div><span className="kicker">{lang === 'es' ? 'Ver también' : lang === 'de' ? 'Siehe auch' : 'See Also'}</span><h2 className="sec-title">{lang === 'es' ? 'RELACIONADOS' : lang === 'de' ? 'VERWANDTE' : 'RELATED PICKS'}</h2></div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14 }}>
+          <div className="grid-3">
             {[
               { href: '/picks/best-clippers', icon: '✂️', en: 'Best Clippers 2026', es: 'Mejores Cortadoras', de: 'Beste Haarschneider' },
               { href: '/picks/best-trimmers', icon: '🔪', en: 'Best Trimmers 2026', es: 'Mejores Recortadoras', de: 'Beste Trimmer' },
@@ -246,4 +246,6 @@ export default function BaldFadeClient() {
     </main>
   )
 }
+
+
 
