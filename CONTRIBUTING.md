@@ -1,9 +1,4 @@
-Отлично! Редактор открыт. Теперь вставь этот текст в поле:
-
----
-
-```
-# Contributing to BarberSupplyHub
+Contributing to BarberSupplyHub
 
 We welcome contributions from the community!
 
@@ -33,7 +28,3 @@ Please open an Issue with:
 
 Contact us at support@barbersupplyhub.com
 ```
-
----
-
-Скопируй текст → вставь в редактор → нажми **"COMMIT CHANGES"** 🟢
