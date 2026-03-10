@@ -1,29 +1,67 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
+import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: 'Barbershop Sanitation Standards 2026',
-  description: 'State board sanitation requirements, Barbicide protocol, blood spill procedures, and infection control for professional barbershops.',
-}
+export default function Page() {
 
-export default function GuidePage() {
+  const content = `
+  <p>
+  Proper sanitation is essential in every professional barbershop. 
+  Clean tools, disinfected surfaces, and safe hygiene practices protect both the barber and the client.
+  </p>
+
+  <h2>Why Barber Sanitation Matters</h2>
+
+  <p>
+  Barbers work in close contact with skin and hair. Without proper sanitation, bacteria and fungi can easily spread.
+  Professional hygiene also builds trust with clients and keeps your shop compliant with regulations.
+  </p>
+
+  <h2>Essential Sanitation Rules</h2>
+
+  <ul>
+  <li>Disinfect clippers and trimmers after every client</li>
+  <li>Use barber-grade disinfectant solutions</li>
+  <li>Wash hands between clients</li>
+  <li>Use clean capes and neck strips</li>
+  <li>Keep your workstation organized and clean</li>
+  </ul>
+
+  <h2>Tools That Must Be Disinfected</h2>
+
+  <ul>
+  <li>Hair clippers</li>
+  <li>Trimmers</li>
+  <li>Scissors</li>
+  <li>Combs and brushes</li>
+  <li>Razors</li>
+  </ul>
+
+  <p>
+  Maintaining strict sanitation standards protects your reputation and ensures a safe environment for everyone.
+  </p>
+  `
+
   return (
-    <main style={{ maxWidth: 760, margin: '0 auto', padding: '48px 24px 80px' }}>
-      <div style={{ marginBottom: 24, fontSize: 13 }}>
-        <Link href="/" style={{ color: 'var(--accent)' }}>Home</Link>
-        <span style={{ margin: '0 8px', opacity: .4 }}>/</span>
-        <Link href="/guides" style={{ color: 'var(--accent)' }}>Guides</Link>
-      </div>
-      <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--accent)' }}>
-        SANITATION · HEALTH · COMPLIANCE
-      </span>
-      <h1 style={{ fontFamily: 'var(--f-display)', fontSize: 'clamp(36px,6vw,72px)', lineHeight: .93, margin: '16px 0 32px' }}>
-        BARBERSHOP SANITATION STANDARDS 2026
+    <main style={{ maxWidth: 900, margin: "0 auto", padding: "64px 24px" }}>
+      <h1 style={{ fontSize: 42, fontWeight: 800, marginBottom: 32 }}>
+        Barber Sanitation Guide
       </h1>
-      <div style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--white-60)' }}
-        dangerouslySetInnerHTML={{ __html: $(System.Collections.Hashtable.content) }} />
-      <div style={{ marginTop: 64, paddingTop: 32, borderTop: '1px solid var(--border)' }}>
-        <Link href="/guides" style={{ color: 'var(--accent)', fontWeight: 700, fontSize: 13, letterSpacing: '.08em', textTransform: 'uppercase' }}>
+
+      <div
+        style={{ fontSize: 15, lineHeight: 1.8 }}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+
+      <div style={{ marginTop: 64, paddingTop: 32, borderTop: "1px solid var(--border)" }}>
+        <Link
+          href="/guides"
+          style={{
+            color: "var(--accent)",
+            fontWeight: 700,
+            fontSize: 13,
+            letterSpacing: ".08em",
+            textTransform: "uppercase"
+          }}
+        >
           ← Back to All Guides
         </Link>
       </div>

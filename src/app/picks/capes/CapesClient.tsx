@@ -51,34 +51,34 @@ const STATS = [
   { n: '14', label: 'CAPES TESTED' },
   { n: '2', label: 'MONTHS TESTING' },
   { n: '6', label: 'BARBERSHOPS' },
-  { n: '200+', label: 'WASH CYCLES' }
+  { n: '200+', label: 'WASH CYCLES' },
 ]
 
 const METHODS_DATA = [
   { icon: '💧', label: 'Waterproof Test', desc: `Each cape tested under running water for 60 seconds. We measure water penetration and beading performance after 50 washes.` },
   { icon: '📐', label: 'Fit Range Test', desc: `Capes fitted on clients from 120 to 280 lbs across multiple heights. We check snap security and coverage area.` },
   { icon: '🧹', label: 'Hair Blocking Test', desc: `Fine hair, coarse hair, and clippings tested for neck seal effectiveness. Zero hair inside = perfect score.` },
-  { icon: '🔄', label: 'Durability Test', desc: `All capes machine washed 200 times at standard settings. We measure fading, snap integrity, and waterproofing degradation.` }
+  { icon: '🔄', label: 'Durability Test', desc: `All capes machine washed 200 times at standard settings. We measure fading, snap integrity, and waterproofing degradation.` },
 ]
 
-const FAQS_DATA: {q:string, a:string}[] = [
+const FAQS_DATA: { q: string; a: string }[] = [
   { q: `What is the best barber cape for 2026?`, a: `The Barber Strong Professional Cape is our top pick — waterproof, double-snap closure, and fits clients from small to 3XL. At $28, it is the most durable cape tested. For volume shops, the Yelegai 3-Pack at $7.33 per cape is exceptional value.` },
   { q: `How do I clean barber capes?`, a: `Machine wash on warm with standard detergent. Avoid fabric softener — it degrades waterproofing. Tumble dry on low or hang dry. High heat damages snap mechanisms. Well-maintained capes last 2-3 years of daily professional use.` },
   { q: `What size barber cape do I need?`, a: `Professional capes should cover from neck to knee on clients up to 280 lbs. Look for adjustable neck closure with at least 3 snap positions. Avoid one-size capes — they gap at the neck on larger clients, letting hair in.` },
   { q: `Waterproof vs water-resistant capes — what is the difference?`, a: `Waterproof capes repel water completely — wet cuts, beard wash, shampoo treatments. Water-resistant capes handle light spray only. For professional barbershops doing wet cuts, waterproof is non-negotiable. Water-resistant is acceptable for dry-cut-only shops.` },
-  { q: `How many capes does a barbershop need?`, a: `A standard barbershop needs 3-4 capes per chair minimum to allow rotation through wash cycles. High-volume shops doing 30+ clients per day need 6-8 per chair. Always have one extra per chair in rotation.` }
+  { q: `How many capes does a barbershop need?`, a: `A standard barbershop needs 3-4 capes per chair minimum to allow rotation through wash cycles. High-volume shops doing 30+ clients per day need 6-8 per chair. Always have one extra per chair in rotation.` },
 ]
 
-const GUIDE_DATA: {h:string, p:string}[] = [
+const GUIDE_DATA: { h: string; p: string }[] = [
   { h: `Waterproofing Levels`, p: `True waterproof capes use polyester or nylon with PU coating. Check for "100% waterproof" specifically — "water-resistant" only handles spray. For barbershops doing wet cuts, only true waterproof capes are acceptable. Test by holding under running water for 30 seconds.` },
   { h: `Neck Closure System`, p: `Adjustable snap closures are the professional standard. Look for at least 3-4 snap positions to accommodate different neck sizes. Velcro closures trap hair and wear out faster. Hook-and-eye closures are the most secure but slowest to adjust between clients.` },
-  { h: `Size & Coverage`, p: `A professional cape should cover from neck to just above the knee on a 6ft client. Shorter capes let hair fall on clothes. Capes that are too long are a tripping hazard. Check the weight capacity — quality capes specify a weight range, cheap ones do not.` }
+  { h: `Size & Coverage`, p: `A professional cape should cover from neck to just above the knee on a 6ft client. Shorter capes let hair fall on clothes. Capes that are too long are a tripping hazard. Check the weight capacity — quality capes specify a weight range, cheap ones do not.` },
 ]
 
 const RELATED_DATA = [
   { emoji: '🧴', href: '/picks/shaving-care', label: 'Best Shaving Care', sub: 'Aftershave & creams' },
   { emoji: '🎒', href: '/picks/bags', label: 'Barber Bags 2026', sub: 'Pro carry solutions' },
-  { emoji: '🔧', href: '/picks/accessories', label: 'Clipper Accessories', sub: 'Oil, guards & brushes' }
+  { emoji: '🔧', href: '/picks/accessories', label: 'Clipper Accessories', sub: 'Oil, guards & brushes' },
 ]
 
 export default function CapesClient() {
@@ -95,14 +95,17 @@ export default function CapesClient() {
 
   return (
     <div style={{ background: 'var(--bg)', color: 'var(--fg)', minHeight: '100vh' }}>
+
+      {/* BREADCRUMB */}
       <div style={{ padding: '12px 24px', borderBottom: '1px solid var(--border)', fontSize: 13 }}>
-        <Link href="/" style={{ color: 'var(--accent)', textDecoration: 'none' }}>BarberSuplyHub</Link>
-        <span style={{ margin: '0 8px', opacity: 0.4 }}>/ </span>
-        <Link href="/picks/best-clippers" style={{ color: 'var(--accent)', textDecoration: 'none' }}>{T(PAGE_T.picks, l)}</Link>
-        <span style={{ margin: '0 8px', opacity: 0.4 }}>/ </span>
+        <Link href="/" style={{ color: 'var(--accent)', textDecoration: 'none' }}>BarberSupplyHub</Link>
+        <span style={{ margin: '0 8px', opacity: 0.4 }}>/</span>
+        <Link href="/picks" style={{ color: 'var(--accent)', textDecoration: 'none' }}>{T(PAGE_T.picks, l)}</Link>
+        <span style={{ margin: '0 8px', opacity: 0.4 }}>/</span>
         <span style={{ opacity: 0.7 }}>{T(PAGE_T.breadcrumb, l)}</span>
       </div>
 
+      {/* HERO */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '64px 24px 40px' }}>
         <p style={{ color: 'var(--accent)', fontWeight: 700, fontSize: 12, letterSpacing: 2, marginBottom: 16 }}>{T(PAGE_T.kicker, l)}</p>
         <h1 style={{ fontSize: 'clamp(48px,8vw,96px)', fontWeight: 900, lineHeight: 0.9, margin: 0 }}>
@@ -125,9 +128,10 @@ export default function CapesClient() {
         </div>
       </div>
 
+      {/* FILTER BAR */}
       <div style={{ position: 'sticky', top: 64, zIndex: 10, background: 'var(--bg)', borderBottom: '1px solid var(--border)', padding: '12px 24px', display: 'flex', gap: 8, alignItems: 'center' }}>
         <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: 1, opacity: 0.5, marginRight: 8 }}>FILTER:</span>
-        {(['all', 'f2', 'f3'] as const).map((v) => (
+        {(['all', 'f2', 'f3'] as const).map(v => (
           <button key={v} onClick={() => setFilter(v)} style={{ padding: '6px 16px', fontSize: 13, fontWeight: 600, border: '1px solid var(--border)', borderRadius: 2, cursor: 'pointer', background: filter === v ? 'var(--accent)' : 'transparent', color: filter === v ? '#000' : 'var(--fg)' }}>
             {v === 'all' ? T(PAGE_T.filterAll, l) : v === 'f2' ? T(PAGE_T.filter2, l) : T(PAGE_T.filter3, l)}
           </button>
@@ -135,14 +139,16 @@ export default function CapesClient() {
         <span style={{ marginLeft: 'auto', fontSize: 13, opacity: 0.5 }}>{filtered.length} {T(PAGE_T.results, l)}</span>
       </div>
 
+      {/* PRODUCT LIST */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
         {filtered.length === 0 && <p style={{ opacity: 0.5, textAlign: 'center', padding: 40 }}>{T(PAGE_T.noResults, l)}</p>}
         {filtered.map(p => (
           <div key={p.id} style={{ marginBottom: 32, border: '1px solid var(--border)', borderRadius: 4, overflow: 'hidden' }}>
+
             <div style={{ padding: '24px 24px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <div>
                 <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
-                  <span style={{ fontSize: 36, fontWeight: 900, opacity: 0.2 }}>{String(p.rank).padStart(2,'0')}</span>
+                  <span style={{ fontSize: 36, fontWeight: 900, opacity: 0.2 }}>{String(p.rank).padStart(2, '0')}</span>
                   {p.badge && <span style={{ background: 'var(--accent)', color: '#000', fontSize: 11, fontWeight: 800, padding: '3px 8px', letterSpacing: 1 }}>{p.badge[l] ?? p.badge.en}</span>}
                 </div>
                 <p style={{ margin: 0, fontSize: 12, fontWeight: 700, opacity: 0.5, letterSpacing: 1 }}>{p.brand.toUpperCase()}</p>
@@ -153,6 +159,7 @@ export default function CapesClient() {
                 <p style={{ margin: 0, fontSize: 11, opacity: 0.5 }}>/ 10 score</p>
               </div>
             </div>
+
             <div className="grid-2">
               <div style={{ padding: 24 }}>
                 <p style={{ margin: '0 0 8px', fontSize: 11, fontWeight: 700, letterSpacing: 1, opacity: 0.5 }}>{T(PAGE_T.verdict, l)}</p>
@@ -162,6 +169,7 @@ export default function CapesClient() {
                 <p style={{ margin: '12px 0 6px', fontSize: 11, fontWeight: 700, letterSpacing: 1, opacity: 0.6 }}>{T(PAGE_T.cons, l)}</p>
                 {(p.cons[l] ?? p.cons.en).map((con, i) => <p key={i} style={{ margin: '3px 0', fontSize: 13, opacity: 0.7 }}>– {con}</p>)}
               </div>
+
               <div style={{ padding: 24, borderLeft: '1px solid var(--border)' }}>
                 <p style={{ margin: '0 0 16px', fontSize: 11, fontWeight: 700, letterSpacing: 1, opacity: 0.5 }}>{T(PAGE_T.scores, l)}</p>
                 {p.scoreBreakdown.map(s => (
@@ -175,10 +183,29 @@ export default function CapesClient() {
                     </div>
                   </div>
                 ))}
+
+                {/* SPECS */}
+                <p style={{ margin: '20px 0 10px', fontSize: 11, fontWeight: 700, letterSpacing: 1, opacity: 0.5 }}>{T(PAGE_T.specs, l)}</p>
+                <div className="grid-specs">
+                  {([
+                    ['Material', p.specs.material],
+                    ['Size', p.specs.size],
+                    ['Waterproof', p.specs.waterproof !== undefined ? (p.specs.waterproof ? '✓ Yes' : '✗ No') : undefined],
+                    ['Warranty', p.specs.warranty],
+                  ] as [string, string | undefined][]).filter(([, v]) => v !== undefined).map(([label, val]) => (
+                    <div key={label} style={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                      <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--white-60)' }}>{label}</span>
+                      <span style={{ fontSize: 12, color: 'var(--white)', fontWeight: 500 }}>{val}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
+
+            {/* CTA */}
             <div style={{ padding: '16px 24px', borderTop: '1px solid var(--border)' }}>
-              <a href={buildAffiliateUrl(p.asin)} target="_blank" rel="noopener noreferrer sponsored" style={{ display: 'block', width: '100%', padding: '14px', textAlign: 'center', background: 'var(--accent)', color: '#000', fontWeight: 800, fontSize: 14, letterSpacing: 1, textDecoration: 'none', borderRadius: 2 }}>
+              <a href={buildAffiliateUrl(p.asin)} target="_blank" rel="noopener nofollow"
+                style={{ display: 'block', width: '100%', padding: '14px', textAlign: 'center', background: 'var(--accent)', color: '#000', fontWeight: 800, fontSize: 14, letterSpacing: 1, textDecoration: 'none', borderRadius: 2 }}>
                 {T(PAGE_T.checkPrice, l)}
               </a>
               <p style={{ margin: '8px 0 0', fontSize: 11, opacity: 0.4, textAlign: 'center' }}>{T(PAGE_T.affNote, l)}</p>
@@ -187,10 +214,11 @@ export default function CapesClient() {
         ))}
       </div>
 
+      {/* HOW WE TEST */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
         <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: 'var(--accent)', marginBottom: 24 }}>{T(PAGE_T.methodTitle, l)}</p>
         <div className="grid-pros-cons">
-          {METHODS_DATA.map((m) => (
+          {METHODS_DATA.map(m => (
             <div key={m.label} style={{ padding: 24, border: '1px solid var(--border)', borderRadius: 4 }}>
               <div style={{ fontSize: 28, marginBottom: 12 }}>{m.icon}</div>
               <p style={{ margin: '0 0 8px', fontWeight: 700, fontSize: 15 }}>{m.label}</p>
@@ -200,6 +228,7 @@ export default function CapesClient() {
         </div>
       </div>
 
+      {/* BUYING GUIDE */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
         <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: 'var(--accent)', marginBottom: 16 }}>{T(PAGE_T.guideKicker, l).toUpperCase()}</p>
         <h2 style={{ fontSize: 'clamp(28px,5vw,48px)', fontWeight: 900, margin: '0 0 40px', lineHeight: 1 }}>
@@ -213,13 +242,15 @@ export default function CapesClient() {
         ))}
       </div>
 
+      {/* FAQ */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
         <h2 style={{ fontSize: 'clamp(28px,5vw,56px)', fontWeight: 900, margin: '0 0 40px', lineHeight: 1 }}>
           {T(PAGE_T.faqTitle, l).split('\n').map((line, i) => <span key={i} style={{ display: 'block' }}>{line}</span>)}
         </h2>
         {FAQS_DATA.map((faq, i) => (
           <div key={i} style={{ borderBottom: '1px solid var(--border)' }}>
-            <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: '100%', background: 'none', border: 'none', color: 'var(--fg)', cursor: 'pointer', padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 15, fontWeight: 500, textAlign: 'left' }}>
+            <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
+              style={{ width: '100%', background: 'none', border: 'none', color: 'var(--fg)', cursor: 'pointer', padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 15, fontWeight: 500, textAlign: 'left' }}>
               {faq.q}
               <span style={{ fontSize: 20, color: 'var(--accent)', marginLeft: 16 }}>{openFaq === i ? '−' : '+'}</span>
             </button>
@@ -228,6 +259,7 @@ export default function CapesClient() {
         ))}
       </div>
 
+      {/* RELATED */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px 80px' }}>
         <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: 'var(--accent)', marginBottom: 8 }}>{T(PAGE_T.relatedKicker, l).toUpperCase()}</p>
         <h2 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, margin: '0 0 32px' }}>{T(PAGE_T.related, l)}</h2>
@@ -242,9 +274,7 @@ export default function CapesClient() {
           ))}
         </div>
       </div>
+
     </div>
   )
 }
-
-
-

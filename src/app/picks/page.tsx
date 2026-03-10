@@ -1,12 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
 import Link from 'next/link'
-import { SITE_URL } from '@/lib/data'
-
-export const metadata: Metadata = {
-  title: 'Best Barber Equipment 2026 — Expert Picks by Category',
-  description: 'Professional barber equipment tested and ranked by working barbers. Clippers, trimmers, scissors, razors and more — updated February 2026.',
-  alternates: { canonical: `${SITE_URL}/picks` },
-}
 
 const PICKS = [
   { href:'/picks/best-clippers', icon:'⚡', title:'Best Clippers', sub:'47 tested · Top rated for fades', badge:'Most Popular' },
