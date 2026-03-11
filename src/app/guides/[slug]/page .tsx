@@ -1,7 +1,7 @@
 import { redirect, notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 
-// All valid guide slugs that have their own static pages
+// Only slugs that have actual static page.tsx files
 const VALID_SLUGS = [
   'how-to-bald-fade',
   'how-to-choose-clipper',
@@ -9,10 +9,6 @@ const VALID_SLUGS = [
   'zero-gap-guide',
   'barber-sanitation',
   'blade-maintenance',
-  'blade-care',
-  'how-to-fade',
-  'starter',
-  'wahl-vs-andis',
 ]
 
 interface Props {
@@ -34,10 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'zero-gap-guide': 'Zero Gap Clippers — Complete Guide | BarberSupplyHub',
     'barber-sanitation': 'Barber Sanitation & Tool Hygiene Guide | BarberSupplyHub',
     'blade-maintenance': 'Clipper Blade Maintenance Guide | BarberSupplyHub',
-    'blade-care': 'Barber Blade Care & Sharpening Guide | BarberSupplyHub',
-    'how-to-fade': 'How to Fade Hair — Complete Barber Guide | BarberSupplyHub',
-    'starter': 'Beginner Barber Starter Kit Guide | BarberSupplyHub',
-    'wahl-vs-andis': 'Wahl vs Andis — Which Clipper is Better? | BarberSupplyHub',
   }
 
   const descMap: Record<string, string> = {
@@ -47,10 +39,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'zero-gap-guide': 'Everything you need to know about zero-gapping your clippers safely for skin-close fades.',
     'barber-sanitation': 'Complete guide to barbershop sanitation, tool disinfection, and hygiene protocols.',
     'blade-maintenance': 'Keep your clipper blades sharp, clean, and performing at their best with this maintenance guide.',
-    'blade-care': 'Professional blade care techniques to extend the life of your barber tools.',
-    'how-to-fade': 'Complete guide to fading hair — from low fades to high skin fades. Step by step for all skill levels.',
-    'starter': 'Best starter kit for beginner barbers. Essential tools, recommended brands, and what to buy first.',
-    'wahl-vs-andis': 'Wahl vs Andis — an honest comparison of the two biggest names in professional barbering.',
   }
 
   return {
@@ -69,6 +57,5 @@ export default function GuideSlugPage({ params }: Props) {
     notFound()
   }
 
-  // Redirect to the static guide page
   redirect(`/guides/${slug}`)
 }
