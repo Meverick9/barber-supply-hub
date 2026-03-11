@@ -122,7 +122,7 @@ export default function HomePage() {
 
           <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
             <Link href="/picks/best-clippers" className="btn btn-primary">{T(HERO.cta1, lang)}</Link>
-            <Link href="/compare" className="btn btn-outline">{T(HERO.cta2, lang)}</Link>
+            
           </div>
         </div>
 
@@ -280,3 +280,4 @@ export default function HomePage() {
     </main>
   )
 }
+
