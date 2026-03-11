@@ -5,9 +5,9 @@ import { useApp } from '@/components/ui/ThemeProvider'
 import { THEMES, LANGUAGES } from '@/lib/data'
 
 const NAV = {
-  en: { clippers:'Clippers', trimmers:'Trimmers', cordless:'Cordless', scissors:'Scissors', compare:'Compare', kit:'Starter Kit', picks:'All Picks' },
-  es: { clippers:'Cortadoras', trimmers:'Recortadoras', cordless:'Inalámbricas', scissors:'Tijeras', compare:'Comparar', kit:'Kit Inicial', picks:'Ver Todo' },
-  de: { clippers:'Haarschneider', trimmers:'Trimmer', cordless:'Kabellos', scissors:'Scheren', compare:'Vergleich', kit:'Starter-Set', picks:'Alle Picks' },
+  en: { clippers:'Clippers', trimmers:'Trimmers', shavers:'Shavers', scissors:'Scissors', guides:'Guides', kit:'Starter Kit', picks:'All Picks' },
+  es: { clippers:'Cortadoras', trimmers:'Recortadoras', shavers:'Afeitadoras', scissors:'Tijeras', guides:'Guías', kit:'Kit Inicial', picks:'Ver Todo' },
+  de: { clippers:'Haarschneider', trimmers:'Trimmer', shavers:'Rasierer', scissors:'Scheren', guides:'Guides', kit:'Starter-Set', picks:'Alle Picks' },
 }
 
 export default function Navbar() {
@@ -18,9 +18,9 @@ export default function Navbar() {
   const links = [
     { href:'/picks/best-clippers', label:n.clippers },
     { href:'/picks/best-trimmers', label:n.trimmers },
-    { href:'/picks/cordless', label:n.cordless },
-    { href:'/picks/scissors', label:n.scissors },
-    { href:'/compare', label:n.compare },
+    { href:'/picks/shavers',       label:n.shavers },
+    { href:'/picks/scissors',      label:n.scissors },
+    { href:'/guides',              label:n.guides },
   ]
 
   return (
