@@ -129,7 +129,7 @@ export default function HomePage() {
           <div style={{ fontSize:11, fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', color:'var(--white-60)' }}>
             {T(HERO.edPick, lang)}
           </div>
-          <article className="card" style={{ overflow:'hidden' }} itemScope itemType="https://schema.org/Product">
+          <article className="card" style={{ overflow:'hidden', width:'100%' }} itemScope itemType="https://schema.org/Product">
             <div style={{ height:180, background:'linear-gradient(135deg,var(--dark-3),var(--dark-2))', display:'flex', alignItems:'center', justifyContent:'center', fontSize:80, position:'relative' }}>
               <span>{editor.emoji}</span>
               <div style={{ position:'absolute', top:14, left:14, background:'var(--accent)', color:'var(--black)', fontFamily:'var(--f-display)', fontSize:26, width:42, height:42, display:'flex', alignItems:'center', justifyContent:'center', borderRadius:2, transition:'background .3s' }}>1</div>
@@ -152,7 +152,7 @@ export default function HomePage() {
                   {editor.priceOld && <div style={{ fontSize:10, fontWeight:700, color:'var(--green)' }}>↓ ${(editor.priceOld - editor.price).toFixed(2)} {T(HERO.priceOff, lang)}</div>}
                 </div>
                 <a href={buildAffiliateUrl(editor.asin)} target="_blank" rel="noopener nofollow"
-                  className="btn btn-primary" style={{ animation:'pulseGlow 3s infinite' }}
+                  className="btn btn-primary" style={{ animation:'pulseGlow 3s infinite', flexShrink:0 }}
                   onClick={() => handleAff(`${editor.brand} ${editor.name}`, 1)}>
                   {T(HERO.checkPrice, lang)}
                 </a>
@@ -202,7 +202,7 @@ export default function HomePage() {
             </div>
             <Link href="/picks/best-clippers" className="sec-link">{T(PICKS_T.seeAll, lang)}</Link>
           </div>
-          <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr', gap:14 }}>
+          <div className="picks-grid">
             {top3.map((p, i) => (
               <article key={p.id} className="card" style={{ padding:22, display:'flex', flexDirection:'column', gap:14, position:'relative' }} itemScope itemType="https://schema.org/Product">
                 <div style={{ fontFamily:'var(--f-display)', fontSize:56, lineHeight:1, color:'var(--white-04)', position:'absolute', top:10, right:14, pointerEvents:'none' }}>{String(p.rank).padStart(2,'0')}</div>
