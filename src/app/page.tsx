@@ -13,7 +13,6 @@ const HERO = {
   titleLine2: { en:'BIBLE.', es:'DEL BARBERO.', de:'WERKZEUG.' },
   sub: { en:'Not a store. Not sponsored reviews. 47 clippers tested by barbers who cut hair every single day.', es:'No somos una tienda. 47 cortadoras probadas por barberos que trabajan cada día.', de:'Kein Shop. 47 Haarschneider getestet von Barbieren, die täglich schneiden.' },
   cta1: { en:'See Top Picks →', es:'Ver Mejores Opciones →', de:'Top-Empfehlungen →' },
-  cta2: { en:'Compare Tools', es:'Comparar Herramientas', de:'Tools vergleichen' },
   edPick: { en:"⚡ Editor's Pick — February 2026", es:'⚡ Elección del Editor — Febrero 2026', de:'⚡ Empfehlung der Redaktion — Februar 2026' },
   priceOff: { en:'off this week', es:'de descuento', de:'diese Woche' },
   checkPrice: { en:'Check Price →', es:'Ver Precio →', de:'Preis prüfen →' },
@@ -38,17 +37,17 @@ const FAQS = {
   en: [
     { q:'What is the best barber clipper for fades in 2026?', a:'The Wahl 5-Star Magic Clip ($89.99, Score: 9.6/10) is our top pick. Zero-gap adjustable blade, 92-min cordless runtime, 0.28 lbs — light enough for a full 8-hour shift.' },
     { q:'Wahl vs Andis — which is better for professional barbers?', a:'Wahl for fades (lighter, quieter, better taper lever). Andis for thick/coarse hair (more powerful EM motor at 14,000 SPM). Most pros own both.' },
-    { q:'Does BarberSuplyHub accept payment to rank products higher?', a:'No. Editorial rankings are never for sale. Revenue comes from Amazon affiliate commissions and AdSense. Sponsored content is always clearly labeled and never influences scores.' },
+    { q:'Does BarberSupplyHub accept payment to rank products higher?', a:'No. Editorial rankings are never for sale. Revenue comes from Amazon affiliate commissions and AdSense. Sponsored content is always clearly labeled and never influences scores.' },
   ],
   es: [
     { q:'¿Cuál es la mejor cortadora para degradados en 2026?', a:'La Wahl 5-Star Magic Clip ($89.99, Nota: 9.6/10). Cuchilla zero-gap, 92 min inalámbrica, 0.28 lbs. Perfecta para jornadas de 8 horas.' },
     { q:'Wahl vs Andis — ¿cuál es mejor para barberos profesionales?', a:'Wahl para degradados (más ligera, silenciosa, mejor lever). Andis para cabello grueso (motor EM más potente). La mayoría de los pros tienen ambas.' },
-    { q:'¿BarberSuplyHub acepta pagos para posicionar productos más alto?', a:'No. Los rankings editoriales nunca están en venta. Los ingresos provienen de comisiones de afiliados de Amazon y AdSense. El contenido patrocinado se etiqueta claramente.' },
+    { q:'¿BarberSupplyHub acepta pagos para posicionar productos más alto?', a:'No. Los rankings editoriales nunca están en venta. Los ingresos provienen de comisiones de afiliados de Amazon y AdSense. El contenido patrocinado se etiqueta claramente.' },
   ],
   de: [
     { q:'Welcher Haarschneider ist 2026 der beste für Fades?', a:'Der Wahl 5-Star Magic Clip ($89,99, Score: 9,6/10). Zero-Gap-Klinge, 92 Min kabellos, 0,28 lbs — leicht genug für eine volle 8-Stunden-Schicht.' },
     { q:'Wahl vs Andis — was ist besser für Profi-Barbiere?', a:'Wahl für Fades (leichter, leiser, besserer Taper-Lever). Andis für dickes Haar (leistungsstärkerer EM-Motor mit 14.000 SPM). Die meisten Profis besitzen beide.' },
-    { q:'Akzeptiert BarberSuplyHub Zahlungen für höhere Rankings?', a:'Nein. Redaktionelle Rankings sind niemals käuflich. Einnahmen aus Amazon-Affiliate und AdSense. Gesponserte Inhalte sind immer klar gekennzeichnet.' },
+    { q:'Akzeptiert BarberSupplyHub Zahlungen für höhere Rankings?', a:'Nein. Redaktionelle Rankings sind niemals käuflich. Einnahmen aus Amazon-Affiliate und AdSense. Gesponserte Inhalte sind immer klar gekennzeichnet.' },
   ],
 }
 
@@ -93,17 +92,17 @@ export default function HomePage() {
       </div>
 
       {/* ══ HERO ══ */}
-      <section style={{ minHeight:'88vh', display:'grid', gridTemplateColumns:'1fr 1fr', position:'relative', overflow:'hidden', padding:0 }}>
+      <section className="hero-grid container">
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 65% 40%, var(--accent-dim) 0%, transparent 60%)', pointerEvents:'none', transition:'background .5s' }} />
 
         {/* Left */}
-        <div style={{ padding:'80px 48px 80px 0', display:'flex', flexDirection:'column', justifyContent:'center', gap:28, position:'relative', zIndex:2 }}>
+        <div className="hero-left">
           <div style={{ display:'inline-flex', alignItems:'center', gap:10, fontSize:11, fontWeight:700, letterSpacing:'.16em', textTransform:'uppercase', color:'var(--accent)' }}>
             <span style={{ width:28, height:1, background:'var(--accent)', display:'inline-block' }} />
             {T(HERO.kicker, lang)}
           </div>
 
-          <h1 style={{ fontFamily:'var(--f-display)', fontSize:'clamp(64px,8.5vw,116px)', lineHeight:.88, color:'var(--white)' }}>
+          <h1 style={{ fontFamily:'var(--f-display)', fontSize:'clamp(48px,8.5vw,116px)', lineHeight:.88, color:'var(--white)' }}>
             <span style={{ display:'block' }}>{T(HERO.titleLine1, lang)}</span>
             <span style={{ display:'block', fontFamily:'var(--f-serif)', fontStyle:'italic', color:'var(--accent)', transition:'color .3s' }}>{T(HERO.titleLine2, lang)}</span>
           </h1>
@@ -122,12 +121,11 @@ export default function HomePage() {
 
           <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
             <Link href="/picks/best-clippers" className="btn btn-primary">{T(HERO.cta1, lang)}</Link>
-            
           </div>
         </div>
 
         {/* Right: Editor's pick card */}
-        <div style={{ padding:'80px 0 80px 64px', display:'flex', flexDirection:'column', justifyContent:'center', gap:20, position:'relative', zIndex:2 }}>
+        <div className="hero-right">
           <div style={{ fontSize:11, fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', color:'var(--white-60)' }}>
             {T(HERO.edPick, lang)}
           </div>
@@ -240,9 +238,9 @@ export default function HomePage() {
             {emailSent ? (
               <div style={{ color:'var(--green)', fontWeight:600, padding:'14px 0', fontSize:15 }}>✓ {T(EMAIL_T.success, lang)}</div>
             ) : (
-              <form onSubmit={handleEmail} style={{ display:'flex', gap:7, maxWidth:460, margin:'0 auto' }}>
+              <form onSubmit={handleEmail} style={{ display:'flex', gap:7, maxWidth:460, margin:'0 auto', flexWrap:'wrap' }}>
                 <input type="email" required placeholder="your@email.com" value={emailVal} onChange={e=>setEmailVal(e.target.value)}
-                  style={{ flex:1, background:'var(--dark)', border:'1px solid var(--border-l)', color:'var(--white)', fontFamily:'var(--f-body)', fontSize:14, padding:'13px 15px', borderRadius:'var(--radius)', outline:'none' }} />
+                  style={{ flex:1, minWidth:200, background:'var(--dark)', border:'1px solid var(--border-l)', color:'var(--white)', fontFamily:'var(--f-body)', fontSize:14, padding:'13px 15px', borderRadius:'var(--radius)', outline:'none' }} />
                 <button type="submit" className="btn btn-primary">{T(EMAIL_T.cta, lang)}</button>
               </form>
             )}
@@ -280,4 +278,3 @@ export default function HomePage() {
     </main>
   )
 }
-
